@@ -9,14 +9,15 @@
 </p>
 
 ------
-This package provides a wonderful **PHP Skeleton** to start building your next package idea.
+This package provides a wonderful **PHP API** client that allows you to interact with [GoHighLevel Api](https://highlevel.stoplight.io/docs/integrations/0443d7d1a4bd0-overview/)
 
+
+> **Requires [Composer](https://getcomposer.org/)**
 > **Requires [PHP 8.2+](https://php.net/releases/)**
 
-⚡️ Create your package using [Composer](https://getcomposer.org):
-
+First, install via [Composer]()
 ```bash
-composer create-project nunomaduro/skeleton-php --prefer-source PackageName
+composer require musheabdulhakim/gohighlevel-php
 ```
 
 🧹 Keep a modern codebase with **Pint**:
@@ -43,5 +44,3 @@ composer test:unit
 ```bash
 composer test
 ```
-
-**Skeleton PHP** was created by **[Nuno Maduro](https://twitter.com/enunomaduro)** under the **[MIT license](https://opensource.org/licenses/MIT)**.
