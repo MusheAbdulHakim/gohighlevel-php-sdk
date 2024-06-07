@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts;
+namespace MusheAbdulHakim\GoHighLevel\Resources\Contacts;
 
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\TaskContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 

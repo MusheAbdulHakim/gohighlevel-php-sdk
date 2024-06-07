@@ -11,7 +11,6 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\AppointmentContract
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\ContactContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\NoteContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\TagContract;
-use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\Task;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\TaskContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Business;
@@ -20,6 +19,7 @@ use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Appointment;
 use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Contact;
 use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Note;
 use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Tag;
+use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Task;
 
 final class Client implements ClientContract
 {
