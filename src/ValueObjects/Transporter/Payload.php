@@ -140,6 +140,18 @@ final class Payload
     }
 
     /**
+     * Creates a new Payload value object from the given parameters.
+     */
+    public static function deleteFromUri(string $resource): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::DELETE;
+        $uri = ResourceUri::get($resource);
+
+        return new self($contentType, $method, $uri);
+    }
+
+    /**
      * Undocumented function
      *
      * @param  array  $params
