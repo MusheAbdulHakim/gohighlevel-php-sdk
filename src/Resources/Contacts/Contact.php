@@ -11,23 +11,48 @@ final class Contact implements ContactContract
 {
     use Transportable;
 
+    /**
+     * Get Contact by contactId
+     *
+     * @param string $contactId
+     * @see https://highlevel.stoplight.io/docs/integrations/00c5ff21f0030-get-contact
+     */
     public function get(string $contactId){
         $payload = Payload::get("contacts/{$contactId}");
-        return $this->transporter->requestObject($payload);
+        return $this->transporter->requestObject($payload)->get('contact');
     }
 
+    /**
+     * Update a Contact
+     *
+     * @param string $contactId
+     * @param array $params
+     * @see https://highlevel.stoplight.io/docs/integrations/9ce5a739d4fb9-update-contact
+     */
     public function update(string $contactId, array $params)
     {
         $payload = Payload::put("contacts/",$contactId,$params);
-        return $this->transporter->requestObject($payload);
+        return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * Delete a Contact
+     *
+     * @param string $contactId
+     * @see https://highlevel.stoplight.io/docs/integrations/28ab84e9522b6-delete-contact
+     */
     public function delete(string $contactId)
     {
         $payload = Payload::delete("contacts/",$contactId);
         return $this->transporter->requestObject($payload);
     }
 
+    /**
+     * Upsert a contact
+     *
+     * @param array $params
+     * @see https://highlevel.stoplight.io/docs/integrations/f71bbdd88f028-upsert-contact
+     */
     public function upsert(array $params)
     {
         $payload = Payload::create("contacts/upsert",$params);
@@ -45,7 +70,7 @@ final class Contact implements ContactContract
         $payload = Payload::get("contacts/business/businessId",[
             'locationId' => $businessId
         ]);
-        return $this->transporter->requestObject($payload);
+        return $this->transporter->requestObject($payload)->get('contacts');
     }
 
     /**
