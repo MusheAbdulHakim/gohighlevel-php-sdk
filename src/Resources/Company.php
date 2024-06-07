@@ -10,12 +10,6 @@ use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 final class Company implements CompanyContract
 {
     use Concerns\Transportable;
-    // use Concerns\HasVersion;
-
-    // public function __construct($apiVersion)
-    // {
-    //     $this->setVersion($apiVersion);
-    // }
 
     public function get(string $companyId)
     {

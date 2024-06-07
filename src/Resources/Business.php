@@ -13,7 +13,7 @@ final class Business implements BusinessContract
 
     public function update(string $businessId, array $params)
     {
-        $payload = Payload::put('businesses/', $businessId, $params);
+        $payload = Payload::put("businesses/$businessId", $params);
 
         $response = $this->transporter->requestObject($payload);
 

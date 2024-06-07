@@ -31,7 +31,7 @@ final class Contact implements ContactContract
      */
     public function update(string $contactId, array $params)
     {
-        $payload = Payload::put('contacts/', $contactId, $params);
+        $payload = Payload::put("contacts/{$contactId}", $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
