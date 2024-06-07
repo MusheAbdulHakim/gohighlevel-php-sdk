@@ -140,7 +140,9 @@ final class Payload
     }
 
     /**
-     * Creates a new Payload value object from the given parameters.
+     * Undocumented function
+     *
+     * @param  array  $params
      */
     public static function get(string $resource, $params = []): self
     {

@@ -47,8 +47,6 @@ final class Response
 
     /**
      * Get item from the response data.
-     *
-     * @return TData
      */
     public function get(string $key): array|string
     {
@@ -64,7 +62,7 @@ final class Response
     }
 
     /**
-     * Returns the response traceid
+     * Returns the response traceId
      */
     public function traceId(): string
     {
