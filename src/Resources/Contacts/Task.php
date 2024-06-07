@@ -39,7 +39,7 @@ final class Task implements TaskContract
     {
         $payload = Payload::get("contacts/{$contactId}/tasks/{$taskId}");
 
-        return $this->transporter->requestObject($payload)->get('contact');
+        return $this->transporter->requestObject($payload)->get('task');
     }
 
     /**
