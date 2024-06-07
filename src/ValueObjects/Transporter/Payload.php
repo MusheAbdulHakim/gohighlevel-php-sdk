@@ -78,11 +78,11 @@ final class Payload
      *
      * @param  array<string, mixed>  $parameters
      */
-    public static function put(string $resource, string $id, array $parameters = []): self
+    public static function put(string $resource, array $parameters = []): self
     {
         $contentType = ContentType::JSON;
         $method = Method::PUT;
-        $uri = ResourceUri::modify($resource, $id);
+        $uri = ResourceUri::get($resource);
 
         return new self($contentType, $method, $uri, $parameters);
     }
