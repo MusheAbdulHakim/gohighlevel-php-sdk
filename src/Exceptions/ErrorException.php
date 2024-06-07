@@ -1,14 +1,14 @@
 <?php
 
 declare(strict_types=1);
+
 namespace MusheAbdulHakim\GoHighLevel\Exceptions;
 
 use Exception;
 
 final class ErrorException extends Exception
 {
-
-     /**
+    /**
      * Creates a new Exception instance.
      *
      * @param  array{message: string|array<int, string>, type: ?string, code: string|int|null}  $contents

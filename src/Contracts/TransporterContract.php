@@ -1,16 +1,18 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Contracts;
 
-use Psr\Http\Message\ResponseInterface;
 use MusheAbdulHakim\GoHighLevel\Exceptions\ErrorException;
 use MusheAbdulHakim\GoHighLevel\Exceptions\TransporterException;
-use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 use MusheAbdulHakim\GoHighLevel\Exceptions\UnserializableResponse;
+use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response;
+use Psr\Http\Message\ResponseInterface;
 
-interface TransporterContract {
+interface TransporterContract
+{
     /**
      * Sends a request to a server.
      *
@@ -24,8 +26,6 @@ interface TransporterContract {
      * Sends a request to a server.
      *
      * @return Response<array<array-key, mixed>|string>
-     *
-     *
      */
     public function request(Payload $payload);
 

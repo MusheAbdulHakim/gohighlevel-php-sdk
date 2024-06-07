@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts;
 
-interface ContactContract {
-
+interface ContactContract
+{
     public function get(string $contactId);
 
     public function update(string $contactId, array $params);
@@ -18,5 +19,4 @@ interface ContactContract {
     public function create(array $params);
 
     public function list(string $locationId);
-
 }

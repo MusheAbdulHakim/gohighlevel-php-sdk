@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Contracts;
@@ -7,8 +8,7 @@ use ArrayAccess;
 
 interface MetaInformationContract extends ArrayAccess
 {
-
-     /**
+    /**
      * Returns the array representation of the meta information.
      *
      * @return TArray
@@ -42,5 +42,4 @@ interface MetaInformationContract extends ArrayAccess
      * @param  TOffsetKey  $offset
      */
     public function offsetUnset(mixed $offset): never;
-
 }

@@ -1,15 +1,16 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
 
 use Http\Discovery\Psr17Factory;
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Message\RequestInterface;
 use Http\Message\MultipartStream\MultipartStreamBuilder;
+use MusheAbdulHakim\GoHighLevel\Enums\Transporter\ContentType;
 use MusheAbdulHakim\GoHighLevel\Enums\Transporter\Method;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\ResourceUri;
-use MusheAbdulHakim\GoHighLevel\Enums\Transporter\ContentType;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * @internal
@@ -125,7 +126,6 @@ final class Payload
 
         return new self($contentType, $method, $uri, $parameters);
     }
-
 
     /**
      * Creates a new Payload value object from the given parameters.

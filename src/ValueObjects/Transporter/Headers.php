@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
@@ -49,15 +50,14 @@ final class Headers
         ]);
     }
 
-
-     /**
+    /**
      * Creates a new Headers value object, with the given api version, and the existing headers.
      */
     public function withApiVersion(string $apiVersion): self
     {
         return new self([
             ...$this->headers,
-            'Version' => $apiVersion
+            'Version' => $apiVersion,
         ]);
     }
 

@@ -1,11 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Resources;
 
-use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
-use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\BusinessContract;
+use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 
 final class Business implements BusinessContract
 {
@@ -13,17 +13,19 @@ final class Business implements BusinessContract
 
     public function update(string $businessId, array $params)
     {
-        $payload = Payload::put("businesses/",$businessId, $params);
+        $payload = Payload::put('businesses/', $businessId, $params);
 
         $response = $this->transporter->requestObject($payload);
+
         return $response;
     }
 
     public function delete(string $businessId)
     {
-        $payload = Payload::delete("businesses/",$businessId);
+        $payload = Payload::delete('businesses/', $businessId);
 
         $response = $this->transporter->requestObject($payload);
+
         return $response;
     }
 
@@ -32,16 +34,18 @@ final class Business implements BusinessContract
         $payload = Payload::get("businesses/{$businessId}");
 
         $response = $this->transporter->requestObject($payload);
+
         return $response;
     }
 
     public function getByLocation(string $locationId)
     {
-        $payload = Payload::get("businesses/",[
-            'locationId' => $locationId
+        $payload = Payload::get('businesses/', [
+            'locationId' => $locationId,
         ]);
 
         $response = $this->transporter->requestObject($payload);
+
         return $response;
     }
 
@@ -49,9 +53,10 @@ final class Business implements BusinessContract
     {
         $params['name'] = $name;
         $params['locationId'] = $locationId;
-        $payload = Payload::create("businesses/", $params);
+        $payload = Payload::create('businesses/', $params);
 
         $response = $this->transporter->requestObject($payload);
+
         return $response;
     }
 }

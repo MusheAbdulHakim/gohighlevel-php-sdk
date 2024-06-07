@@ -6,24 +6,21 @@ namespace MusheAbdulHakim\GoHighLevel;
 
 use Closure;
 use Exception;
-use Http\Discovery\Psr18Client;
-use Psr\Http\Client\ClientInterface;
 use GuzzleHttp\Client as GuzzleClient;
-use Psr\Http\Message\RequestInterface;
-use MusheAbdulHakim\GoHighLevel\Client;
-use Psr\Http\Message\ResponseInterface;
+use Http\Discovery\Psr18Client;
 use Http\Discovery\Psr18ClientDiscovery;
 use MusheAbdulHakim\GoHighLevel\Transporters\HttpTransporter;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\ApiKey;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\BaseUri;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Headers;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\QueryParams;
-
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 final class Factory
 {
-
-     /**
+    /**
      * The API key for the requests.
      */
     private ?string $apiKey = null;
@@ -33,13 +30,12 @@ final class Factory
      */
     private ?string $apiVersion = null;
 
-     /**
+    /**
      * The HTTP client for the requests.
      */
     private ?ClientInterface $httpClient = null;
 
-
-     /**
+    /**
      * The base URI for the requests.
      */
     private ?string $baseUri = null;
@@ -60,7 +56,6 @@ final class Factory
      */
     private array $queryParams = [];
 
-
     /**
      * Sets the API key for the requests.
      */
@@ -71,14 +66,14 @@ final class Factory
         return $this;
     }
 
-
     public function withVersion(?string $apiVersion): self
     {
         $this->apiVersion = trim($apiVersion);
+
         return $this;
     }
 
-     /**
+    /**
      * Sets the HTTP client for the requests.
      * If no client is provided the factory will try to find one using PSR-18 HTTP Client Discovery.
      */
@@ -89,7 +84,7 @@ final class Factory
         return $this;
     }
 
-     /**
+    /**
      * Sets the stream handler for the requests. Not required when using Guzzle.
      */
     public function withStreamHandler(Closure $streamHandler): self

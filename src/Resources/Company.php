@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Resources;
 
-use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\CompanyContract;
+use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 
 final class Company implements CompanyContract
 {

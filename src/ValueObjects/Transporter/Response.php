@@ -17,7 +17,8 @@ final class Response
      * @param  TData  $data
      */
     private function __construct(
-        private readonly array|string $data    ) {
+        private readonly array|string $data)
+    {
         // ..
     }
 
@@ -47,7 +48,6 @@ final class Response
     /**
      * Get item from the response data.
      *
-     * @param string $key
      * @return TData
      */
     public function get(string $key): array|string
@@ -57,8 +57,6 @@ final class Response
 
     /**
      * Returns the response meta data
-     *
-     * @return array|string
      */
     public function meta(): array|string
     {
@@ -67,12 +65,9 @@ final class Response
 
     /**
      * Returns the response traceid
-     *
-     * @return string
      */
     public function traceId(): string
     {
         return $this->data['traceId'];
     }
-
 }

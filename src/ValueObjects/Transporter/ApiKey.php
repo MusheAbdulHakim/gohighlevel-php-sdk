@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
 
 final class ApiKey
@@ -18,9 +19,6 @@ final class ApiKey
         return new self($apiKey);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(): string
     {
         return $this->apiKey;

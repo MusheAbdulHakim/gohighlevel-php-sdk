@@ -6,7 +6,6 @@ namespace MusheAbdulHakim\GoHighLevel\ValueObjects;
 
 use MusheAbdulHakim\GoHighLevel\Contracts\StringableContract;
 
-
 /**
  * @internal
  */
@@ -75,8 +74,6 @@ final class ResourceUri implements StringableContract
     {
         return new self("{$resource}/{$id}/content");
     }
-
-   
 
     /**
      * Creates a new ResourceUri value object that deletes the given resource.

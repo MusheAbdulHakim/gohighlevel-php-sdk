@@ -1,24 +1,25 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Transporters;
 
 use Closure;
-use JsonException;
-use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\ClientException;
-use Psr\Http\Client\ClientExceptionInterface;
-use MusheAbdulHakim\GoHighLevel\Exceptions\ErrorException;
+use JsonException;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Enums\Transporter\ContentType;
+use MusheAbdulHakim\GoHighLevel\Exceptions\ErrorException;
 use MusheAbdulHakim\GoHighLevel\Exceptions\TransporterException;
+use MusheAbdulHakim\GoHighLevel\Exceptions\UnserializableResponse;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\BaseUri;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Headers;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
-use MusheAbdulHakim\GoHighLevel\Exceptions\UnserializableResponse;
-use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\QueryParams;
+use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response;
+use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @internal

@@ -9,20 +9,18 @@ namespace MusheAbdulHakim\GoHighLevel;
  */
 final class GoHighLevel
 {
-
     public static function init(string $apiKey)
     {
         return self::factory()
-                ->withApiKey($apiKey);
+            ->withApiKey($apiKey);
     }
 
     public static function client(string $apiKey, string $version): Client
     {
         return self::factory()
-                ->withApiKey($apiKey)
-                ->make();
+            ->withApiKey($apiKey)
+            ->make();
     }
-
 
     /**
      * Creates a new factory instance to configure a custom Open AI Client
@@ -31,5 +29,4 @@ final class GoHighLevel
     {
         return new Factory();
     }
-
 }
