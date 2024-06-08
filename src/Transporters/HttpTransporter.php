@@ -6,6 +6,7 @@ namespace MusheAbdulHakim\GoHighLevel\Transporters;
 
 use Closure;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
 use JsonException;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Enums\Transporter\ContentType;
@@ -48,36 +49,15 @@ final class HttpTransporter implements TransporterContract
 
         $response = $this->sendRequest(fn (): ResponseInterface => $this->client->sendRequest($request));
 
+        if ($response->getStatusCode() === 404) {
+            throw new RequestException('404 Error. Please check the endpoint', $request, $response);
+        }
+
         $contents = $response->getBody()->getContents();
+
+        // dd($contents);
 
         if (str_contains($response->getHeaderLine('Content-Type'), ContentType::TEXT_PLAIN->value)) {
-            return Response::from($contents, $response->getHeaders());
-        }
-
-        $this->throwIfJsonError($response, $contents);
-
-        try {
-            /** @var array{error?: array{message: string, type: string, code: string}} $data */
-            $data = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
-        } catch (JsonException $jsonException) {
-            throw new UnserializableResponse($jsonException);
-        }
-
-        return Response::from($data, $response->getHeaders());
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function request(Payload $payload): Response
-    {
-        $request = $payload->toRequest($this->baseUri, $this->headers, $this->queryParams);
-
-        $response = $this->sendRequest(fn (): ResponseInterface => $this->client->sendRequest($request));
-
-        $contents = $response->getBody()->getContents();
-
-        if (str_contains($response->getHeaderLine('Content-Type'), ContentType::JSON->value)) {
             return Response::from($contents, $response->getHeaders());
         }
 

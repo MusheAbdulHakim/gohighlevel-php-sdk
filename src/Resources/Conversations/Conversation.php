@@ -69,7 +69,7 @@ final class Conversation implements ConversationContract
     /**
      * Conversation Message
      */
-    public function Message(): MessageContract
+    public function message(): MessageContract
     {
         return new Message($this->transporter);
     }
