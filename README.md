@@ -47,4 +47,4 @@ composer test
 
 
 ## Usage
-<p align="center"><img src="docs/example.png" height="600" alt="GoHighLevel PHP"></p>
+
