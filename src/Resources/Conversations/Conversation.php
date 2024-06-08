@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace MusheAbdulHakim\GoHighLevel\Resources\Conversations;
 
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Conversations\ConversationContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Conversations\EmailContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Conversations\MessageContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Conversations\SearchContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 
@@ -53,5 +56,26 @@ final class Conversation implements ConversationContract
         $payload = Payload::create('conversations', $params);
 
         return $this->transporter->requestObject($payload)->data();
+    }
+
+    /**
+     * Conversation Email
+     */
+    public function email(): EmailContract
+    {
+        return new Email($this->transporter);
+    }
+
+    /**
+     * Conversation Message
+     */
+    public function Message(): MessageContract
+    {
+        return new Message($this->transporter);
+    }
+
+    public function search(): SearchContract
+    {
+        return new Search($this->transporter);
     }
 }

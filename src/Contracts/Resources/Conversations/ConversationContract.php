@@ -46,4 +46,10 @@ interface ConversationContract
      * @see https://highlevel.stoplight.io/docs/integrations/d6b698c33ff49-delete-conversation
      */
     public function delete(string $conversationId): array|string;
+
+    public function email(): EmailContract;
+
+    public function Message(): MessageContract;
+
+    public function search(): SearchContract;
 }
