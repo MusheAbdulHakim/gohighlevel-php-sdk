@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts;
+namespace MusheAbdulHakim\GoHighLevel\Resources\Contacts;
 
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\TaskContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 
@@ -38,7 +39,7 @@ final class Task implements TaskContract
     {
         $payload = Payload::get("contacts/{$contactId}/tasks/{$taskId}");
 
-        return $this->transporter->requestObject($payload)->get('contact');
+        return $this->transporter->requestObject($payload)->get('task');
     }
 
     /**

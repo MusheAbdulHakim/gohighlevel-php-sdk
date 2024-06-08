@@ -21,7 +21,7 @@ final class Tag implements TagContract
             'tags' => $tags,
         ]);
 
-        return $this->transporter->requestObject($payload)->data();
+        return $this->transporter->requestObject($payload)->get('tags');
     }
 
     /**
