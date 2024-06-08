@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Resources\Contacts;
 
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\CampaignContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\ContactContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\FollowerContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\SearchContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\WorkflowContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 
@@ -100,5 +104,39 @@ final class Contact implements ContactContract
         return $this->transporter
             ->requestObject($payload)
             ->get('contacts');
+    }
+
+    /**
+     * Contact Campaign
+     */
+    public function campaign(): CampaignContract
+    {
+        return new Campaign($this->transporter);
+    }
+
+    /**
+     * Contact Workflow
+     */
+    public function workflow(): WorkflowContract
+    {
+        return new Workflow($this->transporter);
+    }
+
+    /**
+     * Add/Remove Contacts From Business
+     */
+    public function bulk(string $locationId, array $ids, string $businessId)
+    {
+        return (new Bulk($this->transporter))->addOrRemove($locationId, $ids, $businessId);
+    }
+
+    public function search(): SearchContract
+    {
+        return new Search($this->transporter);
+    }
+
+    public function followers(): FollowerContract
+    {
+        return new Follower($this->transporter);
     }
 }
