@@ -12,6 +12,7 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\CompanyContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\ContactContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Conversations\ConversationContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Courses\CourseContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Forms\FormContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Business;
 use MusheAbdulHakim\GoHighLevel\Resources\Calendars\Calendar;
@@ -20,6 +21,7 @@ use MusheAbdulHakim\GoHighLevel\Resources\Company;
 use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Contact;
 use MusheAbdulHakim\GoHighLevel\Resources\Conversations\Conversation;
 use MusheAbdulHakim\GoHighLevel\Resources\Courses\Course;
+use MusheAbdulHakim\GoHighLevel\Resources\Forms\Form;
 
 final class Client implements ClientContract
 {
@@ -64,5 +66,10 @@ final class Client implements ClientContract
     public function courses(): CourseContract
     {
         return new Course($this->transporter);
+    }
+
+    public function forms(): FormContract
+    {
+        return new Form($this->transporter);
     }
 }
