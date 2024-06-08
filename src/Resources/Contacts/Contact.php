@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Resources\Contacts;
 
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\AppointmentContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\CampaignContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\ContactContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\FollowerContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\NoteContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\SearchContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\TagContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\TaskContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\WorkflowContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
@@ -107,6 +111,38 @@ final class Contact implements ContactContract
     }
 
     /**
+     * Contact Tasks
+     */
+    public function tasks(): TaskContract
+    {
+        return new Task($this->transporter);
+    }
+
+    /**
+     * Contact Appointments
+     */
+    public function appointments(): AppointmentContract
+    {
+        return new Appointment($this->transporter);
+    }
+
+    /**
+     * Contact Tags
+     */
+    public function tags(): TagContract
+    {
+        return new Tag($this->transporter);
+    }
+
+    /**
+     * Contact Notes
+     */
+    public function notes(): NoteContract
+    {
+        return new Note($this->transporter);
+    }
+
+    /**
      * Contact Campaign
      */
     public function campaign(): CampaignContract
@@ -125,16 +161,22 @@ final class Contact implements ContactContract
     /**
      * Add/Remove Contacts From Business
      */
-    public function bulk(string $locationId, array $ids, string $businessId)
+    public function bulk(string $locationId, array $ids, string $businessId): array
     {
         return (new Bulk($this->transporter))->addOrRemove($locationId, $ids, $businessId);
     }
 
+    /**
+     * Search Contacts
+     */
     public function search(): SearchContract
     {
         return new Search($this->transporter);
     }
 
+    /**
+     * Contact Followers
+     */
     public function followers(): FollowerContract
     {
         return new Follower($this->transporter);
