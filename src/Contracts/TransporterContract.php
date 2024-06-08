@@ -23,13 +23,6 @@ interface TransporterContract
     public function requestObject(Payload $payload): Response;
 
     /**
-     * Sends a request to a server.
-     *
-     * @return Response<array<array-key, mixed>|string>
-     */
-    public function request(Payload $payload);
-
-    /**
      * Sends a content request to a server.
      *
      * @throws ErrorException|TransporterException
