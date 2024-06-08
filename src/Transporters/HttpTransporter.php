@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MusheAbdulHakim\GoHighLevel\Transporters;
 
 use Closure;
+use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ClientException;
 use JsonException;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
@@ -47,6 +48,10 @@ final class HttpTransporter implements TransporterContract
         $request = $payload->toRequest($this->baseUri, $this->headers, $this->queryParams);
 
         $response = $this->sendRequest(fn (): ResponseInterface => $this->client->sendRequest($request));
+
+        if ($response->getStatusCode() !== 200) {
+            throw new BadResponseException($response->getReasonPhrase(), $request, $response);
+        }
 
         $contents = $response->getBody()->getContents();
 
