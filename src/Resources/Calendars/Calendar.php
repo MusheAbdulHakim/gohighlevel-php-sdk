@@ -63,7 +63,7 @@ final class Calendar implements CalendarContract
     public function list(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
-        $payload = Payload::get('calendars', $params);
+        $payload = Payload::get('calendars/', $params);
 
         return $this->transporter->requestObject($payload)->get('calendars');
     }
@@ -75,7 +75,7 @@ final class Calendar implements CalendarContract
     {
         $params['locationId'] = $locationId;
         $params['name'] = $name;
-        $payload = Payload::create('calendars', $params);
+        $payload = Payload::create('calendars/', $params);
 
         return $this->transporter->requestObject($payload)->get('calendar');
     }

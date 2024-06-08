@@ -15,7 +15,7 @@ final class Campaign implements CampaignContract
     public function get(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
-        $payload = Payload::get('campaigns', $params);
+        $payload = Payload::get('campaigns/', $params);
 
         return $this->transporter->requestObject($payload)->get('campaigns');
     }

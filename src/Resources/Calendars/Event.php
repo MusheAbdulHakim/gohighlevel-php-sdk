@@ -21,7 +21,7 @@ final class Event implements EventContract
         $params['startTime'] = $startTime;
         $params['locationId'] = $locationId;
         $params['calendarId'] = $calendarId;
-        $payload = Payload::get('calendars/events', $params);
+        $payload = Payload::get('calendars/events/', $params);
 
         return $this->transporter->requestObject($payload)->get('events');
     }
@@ -35,7 +35,7 @@ final class Event implements EventContract
         $params['startTime'] = $startTime;
         $params['locationId'] = $locationId;
         $params['calendarId'] = $calendarId;
-        $payload = Payload::get('calendars/blocked-slots', $params);
+        $payload = Payload::get('calendars/blocked-slots/', $params);
 
         return $this->transporter->requestObject($payload)->get('events');
     }
@@ -69,7 +69,7 @@ final class Event implements EventContract
         $params['locationId'] = $locationId;
         $params['contactId'] = $contactId;
         $params['startTime'] = $startTime;
-        $payload = Payload::create('calendars/events/appointments', $params);
+        $payload = Payload::create('calendars/events/appointments/', $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
