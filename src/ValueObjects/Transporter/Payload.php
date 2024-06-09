@@ -103,6 +103,20 @@ final class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
+     *
+     * @param  array<string, mixed>  $parameters
+     */
+    public static function patch(string $resource, array $parameters = []): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::PATCH;
+        $uri = ResourceUri::get($resource);
+
+        return new self($contentType, $method, $uri, $parameters);
+    }
+
+    /**
+     * Creates a new Payload value object from the given parameters.
      */
     public static function retrieveContent(string $resource, string $id): self
     {
