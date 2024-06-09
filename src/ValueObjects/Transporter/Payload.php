@@ -74,6 +74,20 @@ final class Payload
     }
 
     /**
+     * Create new payload that sends a post request
+     *
+     * @param  array<string, mixed>  $parameters
+     */
+    public static function post(string $resource, array $parameters = []): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::POST;
+        $uri = ResourceUri::get($resource);
+
+        return new self($contentType, $method, $uri, $parameters);
+    }
+
+    /**
      * Creates a new Payload value object from the given parameters.
      *
      * @param  array<string, mixed>  $parameters
