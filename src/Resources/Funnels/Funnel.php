@@ -15,6 +15,7 @@ final class Funnel implements FunnelContract
 
     public function list(string $locationId, array $params = []): array|string
     {
+        $params['locationId'] = $locationId;
         $payload = Payload::get('funnels/funnel/list/', $params);
 
         return $this->transporter->requestObject($payload)->data();
