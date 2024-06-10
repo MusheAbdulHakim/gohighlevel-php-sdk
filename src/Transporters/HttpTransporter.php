@@ -55,8 +55,6 @@ final class HttpTransporter implements TransporterContract
 
         $contents = $response->getBody()->getContents();
 
-        // dd($contents);
-
         if (str_contains($response->getHeaderLine('Content-Type'), ContentType::TEXT_PLAIN->value)) {
             return Response::from($contents, $response->getHeaders());
         }
