@@ -88,6 +88,16 @@ final class Payload
     }
 
     /**
+     * Create new custom payload that sends whatever request you choose
+     */
+    public static function custom(Method $method, ContentType $contentType, string $resource, array $parameters = []): self
+    {
+        $uri = ResourceUri::get($resource);
+
+        return new self($contentType, $method, $uri, $parameters);
+    }
+
+    /**
      * Creates a new Payload value object from the given parameters.
      *
      * @param  array<string, mixed>  $parameters
