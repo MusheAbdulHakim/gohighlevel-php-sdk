@@ -9,6 +9,8 @@ use Exception;
 use GuzzleHttp\Client as GuzzleClient;
 use Http\Discovery\Psr18Client;
 use Http\Discovery\Psr18ClientDiscovery;
+use MusheAbdulHakim\GoHighLevel\Contracts\Auth\OAuthContract;
+use MusheAbdulHakim\GoHighLevel\Resources\Auth\OAuth;
 use MusheAbdulHakim\GoHighLevel\Transporters\HttpTransporter;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\ApiKey;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\BaseUri;
@@ -39,6 +41,11 @@ final class Factory
      * The base URI for the requests.
      */
     private ?string $baseUri = null;
+
+    /**
+     * The contentType for the requests.
+     */
+    private ?string $contentType = null;
 
     /**
      * The HTTP headers for the requests.
@@ -116,6 +123,16 @@ final class Factory
     }
 
     /**
+     * Adds a Content-Type HTTP header to the requests.
+     */
+    public function withContentType(string $value): self
+    {
+        $this->headers['Content-Type'] = $value;
+
+        return $this;
+    }
+
+    /**
      * Adds a custom query parameter to the request url.
      */
     public function withQueryParam(string $name, string $value): self
@@ -145,6 +162,32 @@ final class Factory
         return function (RequestInterface $_): never {
             throw new Exception('To use stream requests you must provide an stream handler closure via the OpenAI factory.');
         };
+    }
+
+    public function oAuth(): OAuthContract
+    {
+        $headers = Headers::create();
+
+        if ($this->apiVersion !== null) {
+            $headers = $headers->withApiVersion($this->apiVersion);
+        }
+
+        foreach ($this->headers as $name => $value) {
+            $headers = $headers->withCustomHeader($name, $value);
+        }
+
+        $baseUri = BaseUri::from($this->baseUri ?: 'https://services.leadconnectorhq.com');
+
+        $queryParams = QueryParams::create();
+        foreach ($this->queryParams as $name => $value) {
+            $queryParams = $queryParams->withParam($name, $value);
+        }
+        $client = $this->httpClient ??= Psr18ClientDiscovery::find();
+        $sendAsync = $this->makeStreamHandler($client);
+
+        $transporter = new HttpTransporter($client, $baseUri, $headers, $queryParams, $sendAsync);
+
+        return new OAuth($transporter);
     }
 
     public function make(): Client

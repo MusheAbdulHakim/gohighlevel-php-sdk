@@ -9,6 +9,18 @@ namespace MusheAbdulHakim\GoHighLevel;
  */
 final class GoHighLevel
 {
+    public static function oAuth(string $header = '')
+    {
+        $contentType = 'application/x-www-form-urlencoded';
+        if ($header != '') {
+            $contentType = $header;
+        }
+
+        return self::factory()
+            ->withContentType($contentType)
+            ->oAuth();
+    }
+
     public static function init(string $apiKey)
     {
         return self::factory()

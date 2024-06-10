@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel;
 
+use MusheAbdulHakim\GoHighLevel\Contracts\Auth\OAuthContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\ClientContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\BusinessContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Calendars\CalendarContract;
@@ -18,6 +19,7 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Invoices\InvoiceContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Media\LibraryContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\TriggerLinks\TriggerLinkContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
+use MusheAbdulHakim\GoHighLevel\Resources\Auth\OAuth;
 use MusheAbdulHakim\GoHighLevel\Resources\Business;
 use MusheAbdulHakim\GoHighLevel\Resources\Calendars\Calendar;
 use MusheAbdulHakim\GoHighLevel\Resources\Campaigns\Campaign;
@@ -99,5 +101,10 @@ final class Client implements ClientContract
     public function funnels(): FunnelContract
     {
         return new Funnel($this->transporter);
+    }
+
+    public function oauth(): OAuthContract
+    {
+        return new OAuth($this->transporter);
     }
 }
