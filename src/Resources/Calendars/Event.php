@@ -12,29 +12,35 @@ final class Event implements EventContract
 {
     use Transportable;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function get(string $endTime, string $startTime, string $locationId, string $calendarId, array $params = []): array|string
+    public function list(string $locationId, array $params = []): array|string
     {
-        $params['endtime'] = $endTime;
-        $params['startTime'] = $startTime;
         $params['locationId'] = $locationId;
-        $params['calendarId'] = $calendarId;
         $payload = Payload::get('calendars/events/', $params);
 
-        return $this->transporter->requestObject($payload)->get('events');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function slots(string $endTime, string $locationId, string $startTime, string $calendarId, array $params = []): array|string
+    public function get(string $locationId, string $startTime, string $endTime, array $params = []): array|string
+    {
+        $params['locationId'] = $locationId;
+        $params['startTime'] = $startTime;
+        $params['endTime'] = $endTime;
+        $payload = Payload::get('calendars/events/', $params);
+
+        return $this->transporter->requestObject($payload)->data();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function slots(string $locationId, string $endTime, string $startTime, array $params = []): array|string
     {
         $params['endtime'] = $endTime;
         $params['startTime'] = $startTime;
         $params['locationId'] = $locationId;
-        $params['calendarId'] = $calendarId;
         $payload = Payload::get('calendars/blocked-slots/', $params);
 
         return $this->transporter->requestObject($payload)->get('events');
@@ -53,7 +59,7 @@ final class Event implements EventContract
     /**
      * {@inheritDoc}
      */
-    public function ediAppointment(string $eventId, array $params = []): array|string
+    public function editAppointment(string $eventId, array $params = []): array|string
     {
         $payload = Payload::put("calendars/events/appointments/{$eventId}", $params);
 
