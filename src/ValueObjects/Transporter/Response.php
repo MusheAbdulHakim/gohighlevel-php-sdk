@@ -13,8 +13,6 @@ final class Response
 {
     /**
      * Creates a new Response value object.
-     *
-     * @param array|string $data
      */
     private function __construct(
         private readonly array|string $data)
@@ -24,9 +22,8 @@ final class Response
 
     /**
      * Creates a new Response value object from the given data.
-     * @param array|string $data
-     * @param array<string, array<int, string>> $headers
-     * @return self
+     *
+     * @param  array<string, array<int, string>>  $headers
      */
     public static function from(array|string $data, array $headers): self
     {
@@ -35,6 +32,7 @@ final class Response
 
     /**
      * Returns the response data.
+     *
      * @return array<string, array<int, string>>|string
      */
     public function data(): array|string
@@ -44,7 +42,7 @@ final class Response
 
     /**
      * Get item from the response data.
-     * @param string $key
+     *
      * @return array<string, int>|string
      */
     public function get(string $key): array|string
@@ -54,6 +52,7 @@ final class Response
 
     /**
      * Returns the response meta data
+     *
      * @return array<string, int>|string
      */
     public function meta(): array|string
@@ -63,7 +62,6 @@ final class Response
 
     /**
      * Returns the response traceId
-     * @return string
      */
     public function traceId(): string
     {

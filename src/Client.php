@@ -114,5 +114,4 @@ final class Client implements ClientContract
     {
         return new OAuth($this->transporter);
     }
-
 }

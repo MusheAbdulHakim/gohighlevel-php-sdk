@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace MusheAbdulHakim\GoHighLevel\Resources\Locations;
 
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Locations\CustomFieldContract;
@@ -12,44 +14,47 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Locations\TimezoneContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
 
-
 class Location implements LocationContract
 {
     use Transportable;
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function create(array $params): array|string
     {
-        $payload = Payload::create("locations/",$params);
+        $payload = Payload::create('locations/', $params);
+
         return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function get(string $locationId): array|string
     {
         $payload = Payload::get("locations/{$locationId}");
+
         return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function update(string $locationId, array $params = []): array|string
     {
         $payload = Payload::put("locations/{$locationId}", $params);
+
         return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function delete(string $locationId, array $params = []): array|string
     {
-        $payload = Payload::delete("locations/",$locationId);
+        $payload = Payload::delete('locations/', $locationId);
+
         return $this->transporter->requestObject($payload)->data();
     }
 
@@ -57,7 +62,6 @@ class Location implements LocationContract
     {
         return new Tag($this->transporter);
     }
-
 
     public function customField(): CustomFieldContract
     {

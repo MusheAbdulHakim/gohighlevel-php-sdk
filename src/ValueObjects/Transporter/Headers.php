@@ -14,7 +14,7 @@ final class Headers
     /**
      * Creates a new Headers value object.
      *
-     * @param array<string, string> $headers
+     * @param  array<string, string>  $headers
      */
     private function __construct(private readonly array $headers)
     {
@@ -23,7 +23,6 @@ final class Headers
 
     /**
      * Creates a new Headers value object
-     * @return self
      */
     public static function create(): self
     {
@@ -32,8 +31,6 @@ final class Headers
 
     /**
      * Creates a new Headers value object with the given API token.
-     * @param ApiKey $apiKey
-     * @return self
      */
     public static function withAuthorization(ApiKey $apiKey): self
     {
@@ -44,22 +41,17 @@ final class Headers
 
     /**
      * Creates a new Headers value object, with the given content type, and the existing headers.
-     * @param ContentType $contentType
-     * @param string $suffix
-     * @return self
      */
     public function withContentType(ContentType $contentType, string $suffix = ''): self
     {
         return new self([
             ...$this->headers,
-            'Content-Type' => $contentType->value . $suffix,
+            'Content-Type' => $contentType->value.$suffix,
         ]);
     }
 
     /**
      * Creates a new Headers value object, with the given api version, and the existing headers.
-     * @param string $apiVersion
-     * @return self
      */
     public function withApiVersion(string $apiVersion): self
     {
@@ -71,9 +63,6 @@ final class Headers
 
     /**
      * Creates a new Headers value object, with the newly added header, and the existing headers.
-     * @param string $name
-     * @param string $value
-     * @return self
      */
     public function withCustomHeader(string $name, string $value): self
     {

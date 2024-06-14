@@ -13,7 +13,6 @@ final class ResourceUri implements StringableContract
 {
     /**
      * Creates a new ResourceUri value object.
-     * @param string $uri
      */
     private function __construct(private readonly string $uri)
     {
@@ -22,8 +21,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that creates the given resource.
-     * @param string $resource
-     * @return self
      */
     public static function create(string $resource): self
     {
@@ -32,8 +29,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that uploads to the given resource.
-     * @param string $resource
-     * @return self
      */
     public static function upload(string $resource): self
     {
@@ -42,8 +37,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that lists the given resource.
-     * @param string $resource
-     * @return self
      */
     public static function list(string $resource): self
     {
@@ -52,10 +45,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that retrieves the given resource.
-     * @param string $resource
-     * @param string $id
-     * @param string $suffix
-     * @return self
      */
     public static function retrieve(string $resource, string $id, string $suffix): self
     {
@@ -64,8 +53,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that retrieves the given resource.
-     * @param string $resource
-     * @return self
      */
     public static function get(string $resource): self
     {
@@ -74,9 +61,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that modifies the given resource.
-     * @param string $resource
-     * @param string $id
-     * @return self
      */
     public static function modify(string $resource, string $id): self
     {
@@ -85,9 +69,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that retrieves the given resource content.
-     * @param string $resource
-     * @param string $id
-     * @return self
      */
     public static function retrieveContent(string $resource, string $id): self
     {
@@ -96,9 +77,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * Creates a new ResourceUri value object that deletes the given resource.
-     * @param string $resource
-     * @param string $id
-     * @return self
      */
     public static function delete(string $resource, string $id): self
     {
@@ -107,7 +85,6 @@ final class ResourceUri implements StringableContract
 
     /**
      * {@inheritDoc}
-     * @return string
      */
     public function toString(): string
     {
