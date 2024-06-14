@@ -25,15 +25,6 @@ composer require musheabdulhakim/gohighlevel-php
 composer lint
 ```
 
-✅ Run refactors using **Rector**
-```bash
-composer refacto
-```
-
-⚗️ Run static analysis using **PHPStan**:
-```bash
-composer test:types
-```
 
 ✅ Run unit tests using **PEST**
 ```bash
