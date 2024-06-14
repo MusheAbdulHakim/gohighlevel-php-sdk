@@ -2,6 +2,7 @@
 
 namespace MusheAbdulHakim\GoHighLevel\Resources\Opportunities;
 
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Opportunities\FollowerContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Opportunities\OpportunityContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
 use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Payload;
@@ -91,5 +92,10 @@ class Opportunity implements OpportunityContract
         $payload = Payload::get('opportunities/pipelines', $params);
 
         return $this->transporter->requestObject($payload)->data();
+    }
+
+    public function follower(): FollowerContract
+    {
+        return new Follower($this->transporter);
     }
 }

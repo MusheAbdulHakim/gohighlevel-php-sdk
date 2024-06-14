@@ -61,4 +61,6 @@ interface OpportunityContract
      * @see https://highlevel.stoplight.io/docs/integrations/927589990bc39-get-pipelines
      */
     public function pipelines(string $locationId): array|string;
+
+    public function follower(): FollowerContract;
 }
