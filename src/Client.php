@@ -103,7 +103,7 @@ final class Client implements ClientContract
         return new Funnel($this->transporter);
     }
 
-    public function oauth(): OAuthContract
+    public function oAuth(): OAuthContract
     {
         return new OAuth($this->transporter);
     }
