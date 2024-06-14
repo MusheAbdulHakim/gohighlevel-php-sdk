@@ -153,8 +153,8 @@ final class Factory
             return fn (RequestInterface $request): ResponseInterface => $client->send($request, ['stream' => true]);
         }
 
-        if ($client instanceof Psr18Client) { // @phpstan-ignore-line
-            return fn (RequestInterface $request): ResponseInterface => $client->sendRequest($request); // @phpstan-ignore-line
+        if ($client instanceof Psr18Client) {
+            return fn (RequestInterface $request): ResponseInterface => $client->sendRequest($request);
         }
 
         return function (RequestInterface $_): never {
