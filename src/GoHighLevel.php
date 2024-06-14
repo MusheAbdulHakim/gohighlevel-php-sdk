@@ -9,15 +9,22 @@ namespace MusheAbdulHakim\GoHighLevel;
  */
 final class GoHighLevel
 {
-    public static function oAuth(string $header = '')
+    public static function oAuth(string $uri = '', string $header = '')
     {
+        $baseUri = '';
         $contentType = 'application/x-www-form-urlencoded';
         if ($header != '') {
             $contentType = $header;
         }
+        if ($uri != '') {
+            $baseUri = $uri;
+        }
 
         return self::factory()
+            ->withBaseUri($baseUri)
+            ->withHttpHeader('Accept', 'application/json')
             ->withContentType($contentType)
+            ->make()
             ->oAuth();
     }
 
