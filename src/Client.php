@@ -16,6 +16,7 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Courses\CourseContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Forms\FormContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Funnels\FunnelContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Invoices\InvoiceContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Locations\LocationContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Media\LibraryContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\TriggerLinks\TriggerLinkContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
@@ -30,6 +31,7 @@ use MusheAbdulHakim\GoHighLevel\Resources\Courses\Course;
 use MusheAbdulHakim\GoHighLevel\Resources\Forms\Form;
 use MusheAbdulHakim\GoHighLevel\Resources\Funnels\Funnel;
 use MusheAbdulHakim\GoHighLevel\Resources\Invoices\Invoice;
+use MusheAbdulHakim\GoHighLevel\Resources\Locations\Location;
 use MusheAbdulHakim\GoHighLevel\Resources\Media\Library;
 use MusheAbdulHakim\GoHighLevel\Resources\TriggerLinks\TriggerLink;
 
@@ -93,12 +95,17 @@ final class Client implements ClientContract
         return new TriggerLink($this->transporter);
     }
 
+    public function location(): LocationContract
+    {
+        return new Location($this->transporter);
+    }
+
     public function media(): LibraryContract
     {
         return new Library($this->transporter);
     }
 
-    public function funnels(): FunnelContract
+    public function funnel(): FunnelContract
     {
         return new Funnel($this->transporter);
     }
@@ -107,4 +114,5 @@ final class Client implements ClientContract
     {
         return new OAuth($this->transporter);
     }
+
 }
