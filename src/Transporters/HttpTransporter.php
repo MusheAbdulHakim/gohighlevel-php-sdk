@@ -41,7 +41,13 @@ final class HttpTransporter implements TransporterContract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
+     * @param Payload $payload
+     * @return Response<mixed>
+     * @throws ErrorException
+     * @throws JsonException
+     * @throws TransporterException
+     * @throws UnserializableResponse
      */
     public function requestObject(Payload $payload): Response
     {
