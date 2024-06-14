@@ -13,6 +13,7 @@ final class BaseUri implements StringableContract
 {
     /**
      * Creates a new Base URI value object.
+     * @param string $baseUri
      */
     private function __construct(private readonly string $baseUri)
     {
@@ -21,6 +22,8 @@ final class BaseUri implements StringableContract
 
     /**
      * Creates a new Base URI value object.
+     * @param string $baseUri
+     * @return self
      */
     public static function from(string $baseUri): self
     {
@@ -29,6 +32,7 @@ final class BaseUri implements StringableContract
 
     /**
      * {@inheritdoc}
+     * @return string
      */
     public function toString(): string
     {
