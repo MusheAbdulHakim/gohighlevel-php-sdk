@@ -19,6 +19,7 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Invoices\InvoiceContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Locations\LocationContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Media\LibraryContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Opportunities\OpportunityContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Payments\PaymentContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\TriggerLinks\TriggerLinkContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Auth\OAuth;
@@ -35,6 +36,7 @@ use MusheAbdulHakim\GoHighLevel\Resources\Invoices\Invoice;
 use MusheAbdulHakim\GoHighLevel\Resources\Locations\Location;
 use MusheAbdulHakim\GoHighLevel\Resources\Media\Library;
 use MusheAbdulHakim\GoHighLevel\Resources\Opportunities\Opportunity;
+use MusheAbdulHakim\GoHighLevel\Resources\Payments\Payment;
 use MusheAbdulHakim\GoHighLevel\Resources\TriggerLinks\TriggerLink;
 
 final class Client implements ClientContract
@@ -115,6 +117,11 @@ final class Client implements ClientContract
     public function opportunity(): OpportunityContract
     {
         return new Opportunity($this->transporter);
+    }
+
+    public function payments(): PaymentContract
+    {
+        return new Payment($this->transporter);
     }
 
     public function oAuth(): OAuthContract
