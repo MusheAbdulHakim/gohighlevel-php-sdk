@@ -23,7 +23,10 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Payments\PaymentContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Products\ProductContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\SaaS\SaasContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Snapshots\SnapshotsContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Surveys\SurveysContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\TriggerLinks\TriggerLinkContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Users\UsersContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Workflows\WorkflowsContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Auth\OAuth;
 use MusheAbdulHakim\GoHighLevel\Resources\Business;
@@ -43,7 +46,10 @@ use MusheAbdulHakim\GoHighLevel\Resources\Payments\Payment;
 use MusheAbdulHakim\GoHighLevel\Resources\Products\Product;
 use MusheAbdulHakim\GoHighLevel\Resources\SaaS\Saas;
 use MusheAbdulHakim\GoHighLevel\Resources\Snapshots\Snapshot;
+use MusheAbdulHakim\GoHighLevel\Resources\Surveys\Survey;
 use MusheAbdulHakim\GoHighLevel\Resources\TriggerLinks\TriggerLink;
+use MusheAbdulHakim\GoHighLevel\Resources\Users\User;
+use MusheAbdulHakim\GoHighLevel\Resources\Workflows\Workflow;
 
 final class Client implements ClientContract
 {
@@ -143,6 +149,21 @@ final class Client implements ClientContract
     public function Snapshot(): SnapshotsContract
     {
         return new Snapshot($this->transporter);
+    }
+
+    public function Survey(): SurveysContract
+    {
+        return new Survey($this->transporter);
+    }
+
+    public function User(): UsersContract
+    {
+        return new User($this->transporter);
+    }
+
+    public function Workflow(): WorkflowsContract
+    {
+        return new Workflow($this->transporter);
     }
 
     public function oAuth(): OAuthContract
