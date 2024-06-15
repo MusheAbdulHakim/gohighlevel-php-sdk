@@ -20,6 +20,9 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Locations\LocationContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Media\LibraryContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Opportunities\OpportunityContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Payments\PaymentContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Products\ProductContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\SaaS\SaasContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Snapshots\SnapshotsContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\TriggerLinks\TriggerLinkContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\TransporterContract;
 use MusheAbdulHakim\GoHighLevel\Resources\Auth\OAuth;
@@ -37,6 +40,9 @@ use MusheAbdulHakim\GoHighLevel\Resources\Locations\Location;
 use MusheAbdulHakim\GoHighLevel\Resources\Media\Library;
 use MusheAbdulHakim\GoHighLevel\Resources\Opportunities\Opportunity;
 use MusheAbdulHakim\GoHighLevel\Resources\Payments\Payment;
+use MusheAbdulHakim\GoHighLevel\Resources\Products\Product;
+use MusheAbdulHakim\GoHighLevel\Resources\SaaS\Saas;
+use MusheAbdulHakim\GoHighLevel\Resources\Snapshots\Snapshot;
 use MusheAbdulHakim\GoHighLevel\Resources\TriggerLinks\TriggerLink;
 
 final class Client implements ClientContract
@@ -119,9 +125,24 @@ final class Client implements ClientContract
         return new Opportunity($this->transporter);
     }
 
-    public function payments(): PaymentContract
+    public function Payments(): PaymentContract
     {
         return new Payment($this->transporter);
+    }
+
+    public function Products(): ProductContract
+    {
+        return new Product($this->transporter);
+    }
+
+    public function Saas(): SaasContract
+    {
+        return new Saas($this->transporter);
+    }
+
+    public function Snapshot(): SnapshotsContract
+    {
+        return new Snapshot($this->transporter);
     }
 
     public function oAuth(): OAuthContract
