@@ -9,12 +9,12 @@ use MusheAbdulHakim\GoHighLevel\Contracts\StringableContract;
 /**
  * @internal
  */
-final class BaseUri implements StringableContract
+final readonly class BaseUri implements StringableContract
 {
     /**
      * Creates a new Base URI value object.
      */
-    private function __construct(private readonly string $baseUri)
+    private function __construct(private string $baseUri)
     {
         // ..
     }
@@ -34,10 +34,10 @@ final class BaseUri implements StringableContract
     {
         foreach (['http://', 'https://'] as $protocol) {
             if (str_starts_with($this->baseUri, $protocol)) {
-                return "{$this->baseUri}/";
+                return "$this->baseUri/";
             }
         }
 
-        return "https://{$this->baseUri}/";
+        return "https://$this->baseUri/";
     }
 }

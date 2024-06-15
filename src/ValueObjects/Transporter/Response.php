@@ -9,13 +9,13 @@ namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
  *
  * @internal
  */
-final class Response
+final readonly class Response
 {
     /**
      * Creates a new Response value object.
      */
     private function __construct(
-        private readonly array|string $data)
+        private array|string $data)
     {
         // ..
     }

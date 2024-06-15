@@ -9,12 +9,12 @@ use MusheAbdulHakim\GoHighLevel\Contracts\StringableContract;
 /**
  * @internal
  */
-final class ResourceUri implements StringableContract
+final readonly class ResourceUri implements StringableContract
 {
     /**
      * Creates a new ResourceUri value object.
      */
-    private function __construct(private readonly string $uri)
+    private function __construct(private string $uri)
     {
         // ..
     }
@@ -48,7 +48,7 @@ final class ResourceUri implements StringableContract
      */
     public static function retrieve(string $resource, string $id, string $suffix): self
     {
-        return new self("{$resource}/{$id}{$suffix}");
+        return new self("$resource/$id.$suffix");
     }
 
     /**
@@ -56,7 +56,7 @@ final class ResourceUri implements StringableContract
      */
     public static function get(string $resource): self
     {
-        return new self("{$resource}");
+        return new self("$resource");
     }
 
     /**
@@ -64,7 +64,7 @@ final class ResourceUri implements StringableContract
      */
     public static function modify(string $resource, string $id): self
     {
-        return new self("{$resource}/{$id}");
+        return new self("$resource/$id");
     }
 
     /**
@@ -72,7 +72,7 @@ final class ResourceUri implements StringableContract
      */
     public static function retrieveContent(string $resource, string $id): self
     {
-        return new self("{$resource}/{$id}/content");
+        return new self("$resource/$id/content");
     }
 
     /**
@@ -80,7 +80,7 @@ final class ResourceUri implements StringableContract
      */
     public static function delete(string $resource, string $id): self
     {
-        return new self("{$resource}/{$id}");
+        return new self("$resource/$id");
     }
 
     /**
