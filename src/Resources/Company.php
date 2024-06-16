@@ -11,7 +11,7 @@ final class Company implements CompanyContract
 {
     use Concerns\Transportable;
 
-    public function get(string $companyId)
+    public function get(string $companyId): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $payload = Payload::get("companies/{$companyId}");
 

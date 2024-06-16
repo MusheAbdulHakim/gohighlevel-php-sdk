@@ -66,9 +66,14 @@ final class Factory
         return $this;
     }
 
+    /**
+     * Sets the API Version for the requests
+     *
+     * @return $this
+     */
     public function withVersion(?string $apiVersion): self
     {
-        $this->apiVersion = trim($apiVersion);
+        $this->apiVersion = trim((string) $apiVersion);
 
         return $this;
     }
@@ -116,6 +121,16 @@ final class Factory
     }
 
     /**
+     * Adds a Content-Type HTTP header to the requests.
+     */
+    public function withContentType(string $value): self
+    {
+        $this->headers['Content-Type'] = $value;
+
+        return $this;
+    }
+
+    /**
      * Adds a custom query parameter to the request url.
      */
     public function withQueryParam(string $name, string $value): self
@@ -138,8 +153,8 @@ final class Factory
             return fn (RequestInterface $request): ResponseInterface => $client->send($request, ['stream' => true]);
         }
 
-        if ($client instanceof Psr18Client) { // @phpstan-ignore-line
-            return fn (RequestInterface $request): ResponseInterface => $client->sendRequest($request); // @phpstan-ignore-line
+        if ($client instanceof Psr18Client) {
+            return fn (RequestInterface $request): ResponseInterface => $client->sendRequest($request);
         }
 
         return function (RequestInterface $_): never {

@@ -15,9 +15,6 @@ interface MetaInformationContract extends ArrayAccess
      */
     public function toArray(): array;
 
-    /**
-     * @param  key-of<TArray>  $offset
-     */
     public function offsetExists(mixed $offset): bool;
 
     /**

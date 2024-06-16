@@ -12,9 +12,9 @@ final class Search implements SearchContract
 {
     use Transportable;
 
-    public function getDuplicate(string $locationId, $parameters = [])
+    public function getDuplicate(string $locationId, $parameters = []): void
     {
         $parameters['locationId'] = $locationId;
-        $payload = Payload::get('contacts/search/duplicate', $parameters);
+        Payload::get('contacts/search/duplicate', $parameters);
     }
 }

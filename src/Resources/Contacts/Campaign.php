@@ -15,7 +15,7 @@ final class Campaign implements CampaignContract
     /**
      * {@inheritDoc}
      */
-    public function create(string $contactId, string $campaignId)
+    public function create(string $contactId, string $campaignId): string|array
     {
         $payload = Payload::modify("contacts/{$contactId}/campaigns/", $campaignId);
 
@@ -26,7 +26,7 @@ final class Campaign implements CampaignContract
     /**
      * {@inheritDoc}
      */
-    public function add(string $contactId, string $campaignId)
+    public function add(string $contactId, string $campaignId): string|array
     {
         $payload = Payload::modify("contacts/{$contactId}/campaigns/", $campaignId);
 
@@ -37,7 +37,7 @@ final class Campaign implements CampaignContract
     /**
      * {@inheritDoc}
      */
-    public function removeContact(string $contactId, string $campaignId)
+    public function removeContact(string $contactId, string $campaignId): string|array
     {
         $payload = Payload::deleteFromUri("contacts/{$contactId}/campaigns/{$campaignId}");
 
@@ -47,7 +47,7 @@ final class Campaign implements CampaignContract
     /**
      * {@inheritDoc}
      */
-    public function removeContactFromAll(string $contactId)
+    public function removeContactFromAll(string $contactId): string|array
     {
         $payload = Payload::deleteFromUri("contacts/{$contactId}/campaigns/removeAll");
 

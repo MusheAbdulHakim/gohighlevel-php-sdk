@@ -25,7 +25,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/00c5ff21f0030-get-contact
      */
-    public function get(string $contactId)
+    public function get(string $contactId): string|array
     {
         $payload = Payload::get("contacts/{$contactId}");
 
@@ -37,7 +37,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/9ce5a739d4fb9-update-contact
      */
-    public function update(string $contactId, array $params)
+    public function update(string $contactId, array $params): string|array
     {
         $payload = Payload::put("contacts/{$contactId}", $params);
 
@@ -49,7 +49,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/28ab84e9522b6-delete-contact
      */
-    public function delete(string $contactId)
+    public function delete(string $contactId): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $payload = Payload::delete('contacts/', $contactId);
 
@@ -61,7 +61,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/f71bbdd88f028-upsert-contact
      */
-    public function upsert(array $params)
+    public function upsert(array $params): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $payload = Payload::create('contacts/upsert', $params);
 
@@ -73,7 +73,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/8efc6d5a99417-get-contacts-by-business-id
      */
-    public function byBusiness(string $businessId)
+    public function byBusiness(string $businessId): string|array
     {
         $payload = Payload::get('contacts/business/businessId', [
             'locationId' => $businessId,
@@ -87,7 +87,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/4c8362223c17b-create-contact
      */
-    public function create(array $params)
+    public function create(array $params): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $payload = Payload::create('contacts/', $params);
 
@@ -99,7 +99,7 @@ final class Contact implements ContactContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/ab55933a57f6f-get-contacts
      */
-    public function list(string $locationId)
+    public function list(string $locationId): string|array
     {
         $payload = Payload::get('contacts/', [
             'locationId' => $locationId,

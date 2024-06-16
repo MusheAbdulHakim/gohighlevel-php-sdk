@@ -7,14 +7,14 @@ namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
 /**
  * @internal
  */
-final class QueryParams
+final readonly class QueryParams
 {
     /**
      * Creates a new Query Params value object.
      *
      * @param  array<string, string|int>  $params
      */
-    private function __construct(private readonly array $params)
+    private function __construct(private array $params)
     {
         // ..
     }

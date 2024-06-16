@@ -15,7 +15,7 @@ use Psr\Http\Message\StreamInterface;
 /**
  * @internal
  */
-final class Payload
+final readonly class Payload
 {
     /**
      * Creates a new Request value object.
@@ -23,10 +23,10 @@ final class Payload
      * @param  array<string, mixed>  $parameters
      */
     private function __construct(
-        private readonly ContentType $contentType,
-        private readonly Method $method,
-        private readonly ResourceUri $uri,
-        private readonly array $parameters = [],
+        private ContentType $contentType,
+        private Method $method,
+        private ResourceUri $uri,
+        private array $parameters = [],
     ) {
         // ..
     }
@@ -82,6 +82,18 @@ final class Payload
     {
         $contentType = ContentType::JSON;
         $method = Method::POST;
+        $uri = ResourceUri::get($resource);
+
+        return new self($contentType, $method, $uri, $parameters);
+    }
+
+    /**
+     * Create new custom payload that sends whatever request you choose
+     *
+     * @param  array<string, mixed>  $parameters
+     */
+    public static function custom(Method $method, ContentType $contentType, string $resource, array $parameters = []): self
+    {
         $uri = ResourceUri::get($resource);
 
         return new self($contentType, $method, $uri, $parameters);
@@ -180,11 +192,11 @@ final class Payload
     }
 
     /**
-     * Undocumented function
+     * Create a new payload value object from the given parameters using a get method.
      *
-     * @param  array  $params
+     * @param  array<string, mixed>  $params
      */
-    public static function get(string $resource, $params = []): self
+    public static function get(string $resource, array $params = []): self
     {
         $contentType = ContentType::JSON;
         $method = Method::GET;
@@ -195,6 +207,8 @@ final class Payload
 
     /**
      * Creates a new Psr 7 Request instance.
+     *
+     * @throws \JsonException
      */
     public function toRequest(BaseUri $baseUri, Headers $headers, QueryParams $queryParams): RequestInterface
     {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
 
-final class ApiKey
+final readonly class ApiKey
 {
     /**
      * Creates a new API token value object.
      */
-    private function __construct(public readonly string $apiKey)
+    private function __construct(public string $apiKey)
     {
         // ..
     }

@@ -11,14 +11,21 @@ interface EventContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/a83f44a3112a4-get-calendar-events
      */
-    public function get(string $endTime, string $startTime, string $locationId, string $calendarId, array $params = []): array|string;
+    public function list(string $locationId, array $params = []): array|string;
+
+    /**
+     * Get Calendar Events
+     *
+     * @see https://highlevel.stoplight.io/docs/integrations/a83f44a3112a4-get-calendar-events
+     */
+    public function get(string $locationId, string $startTime, string $endTime, array $params = []): array|string;
 
     /**
      * Get Blocked Slots
      *
      * @see https://highlevel.stoplight.io/docs/integrations/e31320c70cfde-get-blocked-slots
      */
-    public function slots(string $endTime, string $locationId, string $startTime, string $calendarId, array $params = []): array|string;
+    public function slots(string $locationId, string $endTime, string $startTime, array $params = []): array|string;
 
     /**
      * Get appointment by ID
@@ -32,7 +39,7 @@ interface EventContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/3a1380a3a9df8-edit-appointment
      */
-    public function ediAppointment(string $eventId, array $params = []): array|string;
+    public function editAppointment(string $eventId, array $params = []): array|string;
 
     /**
      * Create Appointment

@@ -4,21 +4,48 @@ declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel;
 
-/**
- * @internal
- */
+use Http\Discovery\Psr18ClientDiscovery;
+
 final class GoHighLevel
 {
-    public static function init(string $apiKey)
+    public static function getAccessToken(string $uri = '', string $header = '', array $params = [])
+    {
+        $client = Psr18ClientDiscovery::find();
+        $baseUri = '';
+        $contentType = '';
+        if ($header !== '') {
+            $contentType = $header;
+        }
+        if ($uri !== '') {
+            $baseUri = $uri;
+        }
+        $response = $client->request('POST', $baseUri, [
+            'form_params' => $params,
+            'headers' => [
+                'Accept' => 'application/json',
+                'Content-Type' => $contentType,
+            ],
+        ]);
+
+        return json_decode((string) $response->getBody()->getContents(), true);
+    }
+
+    public static function init(string $apiKey): \MusheAbdulHakim\GoHighLevel\Factory
     {
         return self::factory()
             ->withApiKey($apiKey);
     }
 
-    public static function client(string $apiKey, string $version): Client
+    public static function client(string $apiKey, string $version = ''): Client
     {
+        $apiVersion = '';
+        if ($version !== '') {
+            $apiVersion = $version;
+        }
+
         return self::factory()
             ->withApiKey($apiKey)
+            ->withVersion($apiVersion)
             ->make();
     }
 

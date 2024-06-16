@@ -9,15 +9,13 @@ namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
  *
  * @internal
  */
-final class Response
+final readonly class Response
 {
     /**
      * Creates a new Response value object.
-     *
-     * @param  TData  $data
      */
     private function __construct(
-        private readonly array|string $data)
+        private array|string $data)
     {
         // ..
     }
@@ -25,9 +23,7 @@ final class Response
     /**
      * Creates a new Response value object from the given data.
      *
-     * @param  TData  $data
      * @param  array<string, array<int, string>>  $headers
-     * @return Response<TData>
      */
     public static function from(array|string $data, array $headers): self
     {
@@ -37,8 +33,7 @@ final class Response
     /**
      * Returns the response data.
      *
-     *
-     * @return TData
+     * @return array<string, array<int, string>>|string
      */
     public function data(): array|string
     {
@@ -47,6 +42,8 @@ final class Response
 
     /**
      * Get item from the response data.
+     *
+     * @return array<string, int>|string
      */
     public function get(string $key): array|string
     {
@@ -55,6 +52,8 @@ final class Response
 
     /**
      * Returns the response meta data
+     *
+     * @return array<string, int>|string
      */
     public function meta(): array|string
     {

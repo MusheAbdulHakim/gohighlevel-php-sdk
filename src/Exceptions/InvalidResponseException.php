@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 
 final class InvalidResponseException extends Exception
 {
-    public function __construct(private ResponseInterface $response)
+    public function __construct(ResponseInterface $response)
     {
         $message = ($response->getReasonPhrase() ?: (string) $response->getStatusCode()) ?: 'Unknown error';
 

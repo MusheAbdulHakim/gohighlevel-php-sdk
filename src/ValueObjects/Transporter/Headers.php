@@ -9,14 +9,14 @@ use MusheAbdulHakim\GoHighLevel\Enums\Transporter\ContentType;
 /**
  * @internal
  */
-final class Headers
+final readonly class Headers
 {
     /**
      * Creates a new Headers value object.
      *
      * @param  array<string, string>  $headers
      */
-    private function __construct(private readonly array $headers)
+    private function __construct(private array $headers)
     {
         // ..
     }

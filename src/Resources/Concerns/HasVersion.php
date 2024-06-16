@@ -17,7 +17,7 @@ trait HasVersion
     public function setVersion(?string $apiVersion): self
     {
         if (DateTime::createFromFormat('Y-m-d', $apiVersion) !== false) {
-            $this->apiVersion = trim($apiVersion);
+            $this->apiVersion = trim((string) $apiVersion);
 
             return $this;
         }
