@@ -14,12 +14,12 @@ final class OAuth implements OAuthContract
 {
     use Transportable;
 
-    public function get(string $client_id, string $client_secret, string $grant_type, array $params = [])
+    public function get(string $client_id, string $client_secret, string $grant_type, array $params = []): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $params['client_id'] = $client_id;
         $params['client_secret'] = $client_secret;
         $params['grant_type'] = $grant_type;
-        $payload = Payload::custom(Method::POST, ContentType::URL_ENCODE, 'oauth/token', $params);
+        $payload = Payload::custom(Method::POST, ContentType::URL_ENCODE, 'oauth/token/', $params);
 
         return $this->transporter->requestObject($payload);
     }

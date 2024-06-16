@@ -41,11 +41,6 @@ final class Factory
     private ?string $baseUri = null;
 
     /**
-     * The contentType for the requests.
-     */
-    private ?string $contentType = null;
-
-    /**
      * The HTTP headers for the requests.
      *
      * @var array<string, string>
@@ -71,9 +66,14 @@ final class Factory
         return $this;
     }
 
+    /**
+     * Sets the API Version for the requests
+     *
+     * @return $this
+     */
     public function withVersion(?string $apiVersion): self
     {
-        $this->apiVersion = trim($apiVersion);
+        $this->apiVersion = trim((string) $apiVersion);
 
         return $this;
     }
