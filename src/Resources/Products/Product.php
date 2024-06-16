@@ -58,6 +58,7 @@ class Product implements ProductContract
     {
         $params['locationId'] = $locationId;
         $payload = Payload::get('products/', $params);
+
         return $this->transporter->requestObject($payload)->data();
     }
 
