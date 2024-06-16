@@ -15,7 +15,7 @@ final class Workflow implements WorkflowContract
     /**
      * {@inheritDoc}
      */
-    public function create(string $contactId, string $workflowId, string $eventStartTime)
+    public function create(string $contactId, string $workflowId, string $eventStartTime): string|array
     {
         $payload = Payload::create("contacts/{$contactId}/workflow/{$workflowId}", [
             'eventStartTime' => $eventStartTime,
@@ -27,7 +27,7 @@ final class Workflow implements WorkflowContract
     /**
      * {@inheritDoc}
      */
-    public function add(string $contactId, string $workflowId, string $eventStartTime)
+    public function add(string $contactId, string $workflowId, string $eventStartTime): string|array
     {
         $payload = Payload::create("contacts/{$contactId}/workflow/{$workflowId}", [
             'eventStartTime' => $eventStartTime,
@@ -39,7 +39,7 @@ final class Workflow implements WorkflowContract
     /**
      * {@inheritDoc}
      */
-    public function delete(string $contactId, string $workflowId)
+    public function delete(string $contactId, string $workflowId): string|array
     {
         $payload = Payload::deleteFromUri("contacts/{$contactId}/workflow/{$workflowId}");
 

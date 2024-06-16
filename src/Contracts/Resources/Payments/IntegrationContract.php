@@ -9,7 +9,6 @@ interface IntegrationContract
     /**
      * Create White-label Integration Provider
      *
-     * @return mixed
      *
      * @see https://highlevel.stoplight.io/docs/integrations/38fc7b49d107d-create-white-label-integration-provider
      */

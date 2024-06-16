@@ -15,7 +15,7 @@ final class Tag implements TagContract
     /*
     *@inheritDoc
     */
-    public function create(string $contactId, array|string $tags)
+    public function create(string $contactId, array|string $tags): string|array
     {
         $payload = Payload::create("contacts/{$contactId}/tags", [
             'tags' => $tags,
@@ -27,7 +27,7 @@ final class Tag implements TagContract
     /**
      * {@inheritDoc}
      */
-    public function remove(string $contactId)
+    public function remove(string $contactId): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $payload = Payload::deleteFromUri("contacts/{$contactId}/tags");
 

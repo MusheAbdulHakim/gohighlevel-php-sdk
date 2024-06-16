@@ -51,12 +51,12 @@ use MusheAbdulHakim\GoHighLevel\Resources\TriggerLinks\TriggerLink;
 use MusheAbdulHakim\GoHighLevel\Resources\Users\User;
 use MusheAbdulHakim\GoHighLevel\Resources\Workflows\Workflow;
 
-final class Client implements ClientContract
+final readonly class Client implements ClientContract
 {
     /**
      * Creates a Client instance with the given API token.
      */
-    public function __construct(private readonly TransporterContract $transporter)
+    public function __construct(private TransporterContract $transporter)
     {
         // ..
     }

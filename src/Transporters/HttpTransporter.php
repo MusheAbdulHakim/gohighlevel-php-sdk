@@ -25,17 +25,17 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * @internal
  */
-final class HttpTransporter implements TransporterContract
+final readonly class HttpTransporter implements TransporterContract
 {
     /**
      * Creates a new Http Transporter instance.
      */
     public function __construct(
-        private readonly ClientInterface $client,
-        private readonly BaseUri $baseUri,
-        private readonly Headers $headers,
-        private readonly QueryParams $queryParams,
-        private readonly Closure $streamHandler,
+        private ClientInterface $client,
+        private BaseUri $baseUri,
+        private Headers $headers,
+        private QueryParams $queryParams,
+        private Closure $streamHandler,
     ) {
         // ..
     }

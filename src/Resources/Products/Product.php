@@ -26,7 +26,7 @@ class Product implements ProductContract
      */
     public function delete(string $productId, array $params = []): array|string
     {
-        $payload = Payload::deleteFromUri("products/{$productId}", $params);
+        $payload = Payload::deleteFromUri("products/{$productId}");
 
         return $this->transporter->requestObject($payload)->data();
     }
@@ -58,6 +58,7 @@ class Product implements ProductContract
     {
         $params['locationId'] = $locationId;
         $payload = Payload::get('products/', $params);
+        return $this->transporter->requestObject($payload)->data();
     }
 
     public function price(): PriceContract

@@ -27,7 +27,7 @@ class CustomProvider implements CustomProviderContract
     public function delete(string $locationId): array|string
     {
         $params['locationId'] = $locationId;
-        $payload = Payload::deleteFromUri('payments/custom-provider/provider', $params);
+        $payload = Payload::deleteFromUri('payments/custom-provider/provider');
 
         return $this->transporter->requestObject($payload)->data();
     }

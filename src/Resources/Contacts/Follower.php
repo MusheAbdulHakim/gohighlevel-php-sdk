@@ -15,7 +15,7 @@ final class Follower implements FollowerContract
     /**
      * {@inheritDoc}
      */
-    public function add(string $contactId, array $followers)
+    public function add(string $contactId, array $followers): string|array
     {
         $payload = Payload::create("contacts/{$contactId}/followers", [
             'followers' => $followers,
@@ -27,7 +27,7 @@ final class Follower implements FollowerContract
     /**
      * {@inheritDoc}
      */
-    public function create(string $contactId, array $followers)
+    public function create(string $contactId, array $followers): string|array
     {
         $payload = Payload::create("contacts/{$contactId}/followers", [
             'followers' => $followers,
@@ -39,7 +39,7 @@ final class Follower implements FollowerContract
     /**
      * {@inheritDoc}
      */
-    public function delete(string $contactId)
+    public function delete(string $contactId): string|array
     {
         $payload = Payload::deleteFromUri("contacts/{$contactId}/followers");
 

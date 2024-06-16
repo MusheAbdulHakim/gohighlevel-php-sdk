@@ -55,7 +55,7 @@ class Price implements PriceContract
      */
     public function delete(string $productId, string $priceId, array $params = []): array|string
     {
-        $payload = Payload::deleteFromUri("products/{$productId}/price/{$priceId}", $params);
+        $payload = Payload::deleteFromUri("products/{$productId}/price/{$priceId}");
 
         return $this->transporter->requestObject($payload)->data();
     }
