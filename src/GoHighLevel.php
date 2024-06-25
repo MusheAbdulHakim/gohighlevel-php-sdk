@@ -30,7 +30,7 @@ final class GoHighLevel
         return json_decode((string) $response->getBody()->getContents(), true);
     }
 
-    public static function init(string $apiKey): \MusheAbdulHakim\GoHighLevel\Factory
+    public static function init(string $apiKey): Factory
     {
         return self::factory()
             ->withApiKey($apiKey);
