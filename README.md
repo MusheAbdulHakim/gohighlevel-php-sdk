@@ -50,4 +50,4 @@ $client->User()->byLocation($locationId)
 
 ```
 
-### [Go To Docs](./docs/index.md)
+### [Documentation](./docs/index.md)
