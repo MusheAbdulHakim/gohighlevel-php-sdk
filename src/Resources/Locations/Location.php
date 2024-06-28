@@ -53,7 +53,7 @@ class Location implements LocationContract
      */
     public function delete(string $locationId, array $params = []): array|string
     {
-        $payload = Payload::delete('locations/', $locationId);
+        $payload = Payload::delete('locations', $locationId);
 
         return $this->transporter->requestObject($payload)->data();
     }
