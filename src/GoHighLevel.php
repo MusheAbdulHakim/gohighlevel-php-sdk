@@ -8,6 +8,11 @@ use Http\Discovery\Psr18ClientDiscovery;
 
 final class GoHighLevel
 {
+    /**
+     * Request Access Token
+     *
+     * @return void
+     */
     public static function getAccessToken(string $uri = '', string $header = '', array $params = [])
     {
         $client = Psr18ClientDiscovery::find();
@@ -30,6 +35,11 @@ final class GoHighLevel
         return json_decode((string) $response->getBody()->getContents(), true);
     }
 
+    /**
+     * Initialize the client factory.
+     * This gives you control over the client. you will be able to set headers, baseurl,
+     * and httpclient.
+     */
     public static function init(string $apiKey): Factory
     {
         return self::factory()
