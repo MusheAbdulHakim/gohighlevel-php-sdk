@@ -43,11 +43,31 @@ composer test
 ## Usage
 
 ```php
-//Initialize the client
-$client = \MusheAbdulHakim\GoHighLevel\GoHighLevel::client($access_token, '2021-07-28');
+use \MusheAbdulHakim\GoHighLevel\GoHighLevel;
 
-$client->User()->byLocation($locationId)
+//Initialize the client
+$client = GoHighLevel::client($access_token, '2021-07-28');
+
+//Or 
+$clientInit = GoHighLevel::init($access_token)->withVersion('2021-07-28');
+
+
+// Get User by Location
+$user = $client->User()->byLocation($locationId)
+
+
+//Get locations by stripeId with companyId
+
+$data = $clientInit
+    ->withHttpHeader('channel','OAUTH')
+    ->withHttpHeader('source','INTEGRATION')
+    ->make()->Saas()->get([
+        'companyId' => '',
+        'subscriptionId' => '',
+        'customerId' => ''
+    ]);
+
 
 ```
 
-### [Documentation](./docs/index.md)
+### [Visit The Documentation](https://musheabdulhakim.github.io/gohighlevel-php-sdk)
