@@ -51,7 +51,9 @@ $client = GoHighLevel::client($access_token, '2021-07-28');
 //Or 
 $clientInit = GoHighLevel::init($access_token)->withVersion('2021-07-28');
 
-$client->User()->byLocation($locationId)
+
+// Get User by Location
+$user = $client->User()->byLocation($locationId)
 
 
 //Get locations by stripeId with companyId
