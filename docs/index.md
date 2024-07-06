@@ -2,6 +2,10 @@
 
 ## [Authentication](./auth.md)
 
+## [Calendars Api](./Calendar.md)
+## [Campaigns Api](./Campaigns.md)
+## [Company Api](./Company.md)
+## [Contact Api](./Contact.md)
 ## [Businesses Api](./Businesses.md)
 ## [Funnels Api](./Funnels.md)
 ## [Locations Api](./Locations.md)
