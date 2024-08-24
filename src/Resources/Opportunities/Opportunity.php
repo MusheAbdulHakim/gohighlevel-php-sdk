@@ -77,7 +77,7 @@ class Opportunity implements OpportunityContract
      */
     public function search(string $locationId, array $params = []): array|string
     {
-        $params['locationId'] = $locationId;
+        $params['location_id'] = $locationId;
         $payload = Payload::get('opportunities/search', $params);
 
         return $this->transporter->requestObject($payload)->data();
@@ -88,7 +88,7 @@ class Opportunity implements OpportunityContract
      */
     public function pipelines(string $locationId): array|string
     {
-        $params['locationId'] = $locationId;
+        $params['location_id'] = $locationId;
         $payload = Payload::get('opportunities/pipelines', $params);
 
         return $this->transporter->requestObject($payload)->data();
