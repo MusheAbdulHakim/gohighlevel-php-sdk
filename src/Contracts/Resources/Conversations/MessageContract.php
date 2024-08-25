@@ -41,6 +41,16 @@ interface MessageContract
     public function inbound(string $type, string $conversationId, string $conversationProviderId, array $params = []): array|string;
 
     /**
+     * Add an external outbound call
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
+     * @see https://highlevel.stoplight.io/docs/integrations/d032812b4e850-add-an-external-outbound-call
+     */
+    public function outbound(string $type, string $conversationId, string $conversationProviderId, array $params = []): array|string;
+
+    /**
      * Post the messageId for the API to delete a scheduled message.
      *
      * @see https://highlevel.stoplight.io/docs/integrations/f7e0bc96bf0a4-cancel-a-scheduled-message
@@ -67,4 +77,22 @@ interface MessageContract
      * @see https://highlevel.stoplight.io/docs/integrations/72f801089fbac-get-recording-by-message-id
      */
     public function getRecording(string $locationId, string $messageId): array|string;
+
+    /**
+     * Get transcription by Message ID
+     *
+     * @return array<mixed>|string
+     *
+     * @see https://highlevel.stoplight.io/docs/integrations/9f8e2c1696a55-get-transcription-by-message-id
+     */
+    public function getTranscript(string $locationId, string $messageId): array|string;
+
+    /**
+     * Download transcription by Message ID
+     *
+     * @return array<mixed>|string
+     *
+     * @see https://highlevel.stoplight.io/docs/integrations/2dfde1b5257fe-download-transcription-by-message-id
+     */
+    public function downloadTranscript(string $locationId, string $messageId): array|string;
 }
