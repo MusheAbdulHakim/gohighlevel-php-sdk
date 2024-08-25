@@ -12,6 +12,9 @@ final class Form implements FormContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function submissions(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
@@ -20,6 +23,9 @@ final class Form implements FormContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function uploadToCustomFields(string $locationId, string $contactId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
@@ -29,6 +35,9 @@ final class Form implements FormContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
