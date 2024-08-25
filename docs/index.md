@@ -1,12 +1,18 @@
+<u>
+
 # Documentation
+</u>
 
 ## [Authentication](./auth.md)
 
+## [Businesses Api](./Businesses.md)
 ## [Calendars Api](./Calendar.md)
 ## [Campaigns Api](./Campaigns.md)
-## [Company Api](./Company.md)
-## [Contact Api](./Contact.md)
-## [Businesses Api](./Businesses.md)
+## [Companies Api](./Company.md)
+## [Contacts Api](./Contact.md)
+## [Conversations Api](./Conversation.md)
+## [Courses Api](./Courses.md)
+## [Forms Api](./Forms.md)
 ## [Funnels Api](./Funnels.md)
 ## [Locations Api](./Locations.md)
 ## [Saas Api](./Saas.md)
