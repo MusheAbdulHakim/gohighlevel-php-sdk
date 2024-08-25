@@ -1,7 +1,4 @@
-<u>
-
 # Documentation
-</u>
 
 ## [Authentication](./auth.md)
 
