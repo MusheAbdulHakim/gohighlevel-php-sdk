@@ -12,6 +12,9 @@ final class Course implements CourseContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function import(string $locationId, string $userId, array $products): array|string
     {
         $params['locationId'] = $locationId;

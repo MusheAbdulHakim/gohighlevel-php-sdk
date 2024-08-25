@@ -7,7 +7,10 @@ namespace MusheAbdulHakim\GoHighLevel\Contracts\Resources\Courses;
 interface CourseContract
 {
     /**
-     * GetImport Courses through public channels
+     * Import Courses
+     *
+     * @param  array<mixed>  $products
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/7ca9bb420fe98-import-courses
      */
