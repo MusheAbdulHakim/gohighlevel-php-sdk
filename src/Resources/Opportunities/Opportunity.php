@@ -77,7 +77,7 @@ class Opportunity implements OpportunityContract
      */
     public function search(string $locationId, array $params = []): array|string
     {
-        $params['locationId'] = $locationId;
+        $params['location_id'] = $locationId;
         $payload = Payload::get('opportunities/search', $params);
 
         return $this->transporter->requestObject($payload)->data();
