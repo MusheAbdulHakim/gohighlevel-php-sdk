@@ -15,9 +15,9 @@ class CustomField implements CustomFieldContract
     /**
      * {@inheritDoc}
      */
-    public function list(string $locationId): array|string
+    public function list(string $locationId, array $params = []): array|string
     {
-        $payload = Payload::get("locations/{$locationId}/customFields");
+        $payload = Payload::get("locations/{$locationId}/customFields", $params);
 
         return $this->transporter->requestObject($payload)->get('customFields');
     }

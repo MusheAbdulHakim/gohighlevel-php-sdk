@@ -9,11 +9,13 @@ interface CustomFieldContract
     /**
      * Get Custom Fields
      *
+     * @param  array<array,string>  $params
+     *
      * @return array<string,int>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/791462a3367b9-get-custom-fields
      */
-    public function list(string $locationId): array|string;
+    public function list(string $locationId, array $params = []): array|string;
 
     /**
      * Create Custom Field
