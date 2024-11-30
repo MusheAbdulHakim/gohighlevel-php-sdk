@@ -10,7 +10,6 @@ interface CustomFieldContract
      * Get Custom Fields
      *
      * @param  array<array,string>  $params
-     *
      * @return array<string,int>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/791462a3367b9-get-custom-fields

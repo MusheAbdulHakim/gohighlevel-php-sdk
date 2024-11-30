@@ -212,7 +212,7 @@ final readonly class Payload
      */
     public function toRequest(BaseUri $baseUri, Headers $headers, QueryParams $queryParams): RequestInterface
     {
-        $psr17Factory = new Psr17Factory();
+        $psr17Factory = new Psr17Factory;
 
         $body = null;
 

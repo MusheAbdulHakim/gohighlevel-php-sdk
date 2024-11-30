@@ -64,6 +64,6 @@ final class GoHighLevel
      */
     public static function factory(): Factory
     {
-        return new Factory();
+        return new Factory;
     }
 }
