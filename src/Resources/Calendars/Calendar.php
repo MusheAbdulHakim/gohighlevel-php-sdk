@@ -18,7 +18,7 @@ final class Calendar implements CalendarContract
     /**
      * {@inheritDoc}
      */
-    public function slots(string $calendarId, string $startDate, string $endDate): array|string
+    public function slots(string $calendarId, string $startDate, string $endDate, array $params = []): array|string
     {
         $params['startDate'] = $startDate;
         $params['endDate'] = $endDate;
@@ -66,6 +66,14 @@ final class Calendar implements CalendarContract
         $payload = Payload::get('calendars/', $params);
 
         return $this->transporter->requestObject($payload)->get('calendars');
+    }
+
+    /**
+     * Get all calendars in a location.
+     */
+    public function getCalendars(string $locationId, array $params = []): array|string
+    {
+        return $this->list($locationId, $params);
     }
 
     /**
