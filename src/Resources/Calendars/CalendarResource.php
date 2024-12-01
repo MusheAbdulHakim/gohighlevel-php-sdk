@@ -12,6 +12,9 @@ final class CalendarResource implements CalendarResourceContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $id, string $resourceType): array|string
     {
         $payload = Payload::get("calendars/resources/{$resourceType}/{$id}");
@@ -19,6 +22,9 @@ final class CalendarResource implements CalendarResourceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $id, string $resourceType, array $params = []): array|string
     {
         $payload = Payload::put("calendars/resources/{$resourceType}/{$id}", $params);
@@ -27,6 +33,9 @@ final class CalendarResource implements CalendarResourceContract
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function delete(string $id, string $resourceType): array|string
     {
         $payload = Payload::delete("calendars/resources/{$resourceType}/", $id);
@@ -35,6 +44,9 @@ final class CalendarResource implements CalendarResourceContract
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $resourceType, $params = []): array|string
     {
         $payload = Payload::get("calendars/resources/{$resourceType}", $params);
@@ -43,6 +55,9 @@ final class CalendarResource implements CalendarResourceContract
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(string $resourceType, $params = []): array|string
     {
         $payload = Payload::create("calendars/resources/{$resourceType}", $params);

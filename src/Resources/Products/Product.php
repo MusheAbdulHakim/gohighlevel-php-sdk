@@ -62,6 +62,9 @@ class Product implements ProductContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function price(): PriceContract
     {
         return new Price($this->transporter);

@@ -131,37 +131,37 @@ final readonly class Client implements ClientContract
         return new Opportunity($this->transporter);
     }
 
-    public function Payments(): PaymentContract
+    public function payments(): PaymentContract
     {
         return new Payment($this->transporter);
     }
 
-    public function Products(): ProductContract
+    public function products(): ProductContract
     {
         return new Product($this->transporter);
     }
 
-    public function Saas(): SaasContract
+    public function saas(): SaasContract
     {
         return new Saas($this->transporter);
     }
 
-    public function Snapshot(): SnapshotsContract
+    public function snapshot(): SnapshotsContract
     {
         return new Snapshot($this->transporter);
     }
 
-    public function Survey(): SurveysContract
+    public function survey(): SurveysContract
     {
         return new Survey($this->transporter);
     }
 
-    public function User(): UsersContract
+    public function user(): UsersContract
     {
         return new User($this->transporter);
     }
 
-    public function Workflow(): WorkflowsContract
+    public function workflow(): WorkflowsContract
     {
         return new Workflow($this->transporter);
     }

@@ -14,12 +14,17 @@ interface SaasContract
     /**
      * Get locations by stripeId with companyId
      *
+     * @param  array<string>  $params
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/17e63a64621dc-get-locations-by-stripe-id-with-company-id
      */
     public function get(array $params = []): Response;
 
     /**
      * Update SaaS subscription
+     *
+     *
+     * @param  array<string>  $params
      *
      * @see https://highlevel.stoplight.io/docs/integrations/3ed6984d6d3d3-update-saa-s-subscription
      */

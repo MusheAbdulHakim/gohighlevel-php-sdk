@@ -27,6 +27,8 @@ class Transaction implements TransactionContract
      */
     public function get(string $transactionId, string $altId, string $altType, array $params = []): array|string
     {
+        $params['altId'] = $altId;
+        $params['altType'] = $altType;
         $payload = Payload::get("payments/transactions/{$transactionId}", $params);
 
         return $this->transporter->requestObject($payload)->data();

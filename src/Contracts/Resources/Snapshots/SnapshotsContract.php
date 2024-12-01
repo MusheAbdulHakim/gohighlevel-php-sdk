@@ -9,6 +9,10 @@ interface SnapshotsContract
     /**
      * Get Snapshots
      *
+     *
+     * @param  array<string>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/b7ac59fac1e81-get-snapshots
      */
     public function list(array $params = []): array|string;
@@ -29,6 +33,9 @@ interface SnapshotsContract
 
     /**
      * Get Last Snapshot Push
+     *
+
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/6c45f1aad5098-get-last-snapshot-push
      */

@@ -12,6 +12,9 @@ final class Group implements GroupContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $locationId): array|string
     {
         $payload = Payload::get('calendars/groups', [
@@ -21,6 +24,9 @@ final class Group implements GroupContract
         return $this->transporter->requestObject($payload)->get('groups');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(array $params): array|string
     {
         $payload = Payload::create('calendars/groups', $params);
@@ -28,6 +34,9 @@ final class Group implements GroupContract
         return $this->transporter->requestObject($payload)->get('group');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function validate(string $locationId, string $slug, bool $available): array|string
     {
         $params['locationId'] = $locationId;
@@ -38,6 +47,9 @@ final class Group implements GroupContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function delete(string $groupId): array|string
     {
         $payload = Payload::delete('calendars/groups', $groupId);
@@ -45,6 +57,9 @@ final class Group implements GroupContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $groupId, array $params = []): array|string
     {
         $payload = Payload::put("calendars/groups/{$groupId}", $params);
@@ -52,6 +67,9 @@ final class Group implements GroupContract
         return $this->transporter->requestObject($payload)->get('group');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function disable(string $groupId, bool $isActive): array|string
     {
         $params['isActive'] = $isActive;

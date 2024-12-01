@@ -14,6 +14,9 @@ final class OAuth implements OAuthContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $client_id, string $client_secret, string $grant_type, array $params = []): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
     {
         $params['client_id'] = $client_id;
@@ -24,6 +27,9 @@ final class OAuth implements OAuthContract
         return $this->transporter->requestObject($payload);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function AcessFromAgency(string $companyId, string $locationId): array|string
     {
         $params['companyId'] = $companyId;
@@ -33,6 +39,9 @@ final class OAuth implements OAuthContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function appLocation(string $appId, string $companyId, array $params = []): array|string
     {
         $params['appId'] = $appId;
@@ -42,6 +51,9 @@ final class OAuth implements OAuthContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function location(string $appId, string $companyId, array $params = []): array|string
     {
         $params['appId'] = $appId;

@@ -12,6 +12,9 @@ final class Event implements EventContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
