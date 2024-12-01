@@ -90,7 +90,7 @@ $client->user()->delete($userId);
 
 ```php
 $client = GoHighLevel::client($access_token,'2021-07-28');
-$client->User()->byLocation($locationId)
+$client->user()->byLocation($locationId)
 
 ```
 
@@ -98,6 +98,6 @@ $client->User()->byLocation($locationId)
 
 ```php
 $client = GoHighLevel::client($access_token,'2021-07-28');
-$client->User()->get($userId)
+$client->user()->get($userId)
 
 ```

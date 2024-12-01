@@ -11,8 +11,11 @@
 ## [Courses Api](./Courses.md)
 ## [Forms Api](./Forms.md)
 ## [Funnels Api](./Funnels.md)
-## [Locations Api](./Locations.md)
+## [Payments Api](./Payments.md)
+## [Products Api](./Products.md)
 ## [Saas Api](./Saas.md)
+## [Snapshots Api](./Snapshot.md)
+## [Sub-Account (Formerly location) Api](./Locations.md)
 ## [Users Api](./Users.md)
 ## [Workflow Api](./Workflow.md)
 
