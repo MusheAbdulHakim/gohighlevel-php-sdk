@@ -62,7 +62,7 @@ final readonly class HttpTransporter implements TransporterContract
         $contents = $response->getBody()->getContents();
 
         if (str_contains($response->getHeaderLine('Content-Type'), ContentType::TEXT_PLAIN->value)) {
-            return Response::from($contents, $response->getHeaders());
+            return Response::from($contents);
         }
 
         $this->throwIfJsonError($response, $contents);
@@ -75,7 +75,7 @@ final readonly class HttpTransporter implements TransporterContract
         }
 
         // @phpstan-ignore-next-line
-        return Response::from($data, $response->getHeaders());
+        return Response::from($data);
     }
 
     /**

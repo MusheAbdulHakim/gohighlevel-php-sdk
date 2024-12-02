@@ -15,8 +15,8 @@ final readonly class Response
      * @param  array<mixed>|string  $data
      */
     private function __construct(
-        private array|string $data)
-    {
+        private array|string $data
+    ) {
         // ..
     }
 
@@ -25,9 +25,8 @@ final readonly class Response
      *
      *
      * @param  array<mixed>|string  $data
-     * @param  array<mixed>  $headers
      */
-    public static function from(array|string $data, array $headers = []): self
+    public static function from(array|string $data): self
     {
         return new self($data);
     }

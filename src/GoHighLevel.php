@@ -12,9 +12,8 @@ final class GoHighLevel
      * Request Access Token
      *
      * @param  array<mixed>  $params
-     * @return mixed
      */
-    public static function getAccessToken(string $uri = '', string $header = '', array $params = [])
+    public static function getAccessToken(string $uri = '', string $header = '', array $params = []): mixed
     {
         $client = Psr18ClientDiscovery::find();
         $baseUri = '';
@@ -66,6 +65,6 @@ final class GoHighLevel
      */
     public static function factory(): Factory
     {
-        return new Factory;
+        return new Factory();
     }
 }

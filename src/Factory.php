@@ -177,7 +177,7 @@ final class Factory
             $headers = $headers->withCustomHeader($name, $value);
         }
 
-        $baseUri = BaseUri::from($this->baseUri ?: 'https://services.leadconnectorhq.com');
+        $baseUri = BaseUri::from($this->baseUri !== null && $this->baseUri !== '' && $this->baseUri !== '0' ? $this->baseUri : 'https://services.leadconnectorhq.com');
 
         $queryParams = QueryParams::create();
         foreach ($this->queryParams as $name => $value) {
