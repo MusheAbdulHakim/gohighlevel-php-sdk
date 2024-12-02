@@ -29,12 +29,19 @@ interface OpportunityContract
     /**
      * Update Opportunity
      *
+     *
+     * @param  array<string,number>  $params
+     * @return array<string,number,bool>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/ca75b3ab9e828-update-opportunity
      */
     public function update(string $id, array $params = []): array|string;
 
     /**
      * Update Opportunity Status
+     *
+     *
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d595e6fa2b666-update-opportunity-status
      */
@@ -43,12 +50,20 @@ interface OpportunityContract
     /**
      * Upsert Opportunity
      *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/9df1c12e5da99-upsert-opportunity
      */
     public function upsert(string $pipelineId, string $locationId, string $contactId, array $params = []): array|string;
 
     /**
      * Create Opportunity
+     *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/802093aa63900-create-opportunity
      */
@@ -57,12 +72,18 @@ interface OpportunityContract
     /**
      * Search Opportunity
      *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/a163e98c45b8d-search-opportunity
      */
     public function search(string $locationId, array $params = []): array|string;
 
     /**
      * Get Pipelines
+     *
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/927589990bc39-get-pipelines
      */

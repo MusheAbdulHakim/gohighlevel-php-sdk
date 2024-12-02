@@ -20,12 +20,20 @@ interface SnapshotsContract
     /**
      * Create Snapshot Share Link
      *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/7cfd7fa37e660-create-snapshot-share-link
      */
     public function create(string $companyId, array $params = []): array|string;
 
     /**
      * Get Snapshot Push between Dates
+     *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/3aafd3250cc4d-get-snapshot-push-between-dates
      */
@@ -34,7 +42,9 @@ interface SnapshotsContract
     /**
      * Get Last Snapshot Push
      *
-
+     *
+     *
+     * @param  array<mixed>  $params
      * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/6c45f1aad5098-get-last-snapshot-push

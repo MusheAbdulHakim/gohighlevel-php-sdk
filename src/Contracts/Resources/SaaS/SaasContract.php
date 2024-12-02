@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace MusheAbdulHakim\GoHighLevel\Contracts\Resources\SaaS;
 
-use MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response;
-
 /**
  * @see https://highlevel.stoplight.io/docs/integrations/5e0404456de81-saa-s-api
  */
@@ -14,47 +12,66 @@ interface SaasContract
     /**
      * Get locations by stripeId with companyId
      *
+     *
      * @param  array<string>  $params
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/17e63a64621dc-get-locations-by-stripe-id-with-company-id
      */
-    public function get(array $params = []): Response;
+    public function get(array $params = []): array|string;
 
     /**
      * Update SaaS subscription
      *
      *
      * @param  array<string>  $params
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/3ed6984d6d3d3-update-saa-s-subscription
      */
-    public function update(string $locationId, array $params = []): Response;
+    public function update(string $locationId, array $params = []): array|string;
 
     /**
      * Disable SaaS for locations
      *
+     *
+     * @param  array<string, array<string>>  $params
+     * @return array<string,number>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/ae2bab1a54b4b-disable-saa-s-for-locations
      */
-    public function disable(string $companyId, array $params = []): Response;
+    public function disable(string $companyId, array $params = []): array|string;
 
     /**
      * Enable SaaS for location
      *
+     *
+     * @param  array<string>  $params
+     * @return array<string,number>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/b7ee10fc892a5-enable-saa-s-for-location
      */
-    public function enable(string $locationId, array $params = []): Response;
+    public function enable(string $locationId, array $params = []): array|string;
 
     /**
      * Pause location
      *
+     *
+     * @param  array<string>  $params
+     * @return array<string,number>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/7ad2b7afa2a8c-pause-location
      */
-    public function pause(string $locationId, array $params = []): Response;
+    public function pause(string $locationId, array $params = []): array|string;
 
     /**
      * Update Rebilling
      *
+     *
+     * @param  array<string>  $params
+     * @return array<string,number>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/cad43318bd5dc-update-rebilling
      */
-    public function updateRebilling(string $companyId, array $params = []): Response;
+    public function updateRebilling(string $companyId, array $params = []): array|string;
 }
