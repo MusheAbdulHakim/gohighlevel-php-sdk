@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
 
 /**
- * @template-covariant TData of array|string
  *
  * @internal
  */
@@ -26,7 +25,7 @@ final readonly class Response
      *
      *
      * @param  array<string,number>|string  $data
-     * @param  array<string, array<int, string>>  $headers
+     * @param  array<string, array<number, string>, boolean, number>  $headers
      * 
      * @return \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
      */
@@ -48,7 +47,7 @@ final readonly class Response
     /**
      * Get item from the response data.
      *
-     * @return array<string, int, number, array<string>>|string
+     * @return array<string, number, array<string, number>>|string
      */
     public function get(string $key): array|string
     {

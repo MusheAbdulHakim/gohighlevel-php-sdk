@@ -10,7 +10,7 @@ interface CustomProviderContract
      *Create new integration
      *
      * @param  array<string>  $params
-     * @return array<mixed>|string
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d3e2affc0897a-create-new-integration
      */
@@ -19,7 +19,8 @@ interface CustomProviderContract
     /**
      *Deleting an existing integration
      *
-     * @return array<bool>|string
+     * @param string $locationId
+     * @return array<string,number,boolean>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/97fffb0398f3c-deleting-an-existing-integration
      */
@@ -28,8 +29,8 @@ interface CustomProviderContract
     /**
      * Fetch given provider config
      *
-     * @return array<mixed>|string
-     *
+     * @param string $locationId
+     * @return array<string,number>|string
      * @see https://highlevel.stoplight.io/docs/integrations/dec209bac6191-fetch-given-provider-config
      */
     public function getConfig(string $locationId): array|string;
@@ -37,9 +38,9 @@ interface CustomProviderContract
     /**
      * Create new provider config
      *
-     * @param  array<mixed>  $params
-     * @return array<mixed>|string
-     *
+     * @param string $locationId
+     * @param array<string,number> $params
+     * @return array<string,number>|string
      * @see https://highlevel.stoplight.io/docs/integrations/377c9e577827b-create-new-provider-config
      */
     public function createConfig(string $locationId, array $params): array|string;
@@ -47,7 +48,7 @@ interface CustomProviderContract
     /**
      * Delete existing provider config
      *
-     * @return array<mixed>|string
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d9151fabd2d1a-delete-existing-provider-config
      */
@@ -56,7 +57,7 @@ interface CustomProviderContract
     /**
      * Disconnect existing provider config
      *
-     * @return array<mixed>
+     * @return array<string,number>
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d9151fabd2d1a-disconnect-existing-provider-config
      */
