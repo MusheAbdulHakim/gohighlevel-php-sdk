@@ -19,9 +19,9 @@
         "psr/http-message": "^2.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.65",
         "guzzlehttp/guzzle": "^7.9",
         "guzzlehttp/psr7": "^2.7",
-        "laravel/pint": "^1.18",
         "pestphp/pest": "^3.5",
         "pestphp/pest-plugin-type-coverage": "^3.1",
         "phpstan/phpstan": "^1.12",
@@ -49,14 +49,15 @@
         }
     },
     "scripts": {
+        "lint": "php-cs-fixer fix .",
+        "test:lint": "php-cs-fixer fix . --dry-run",
         "refacto": "rector",
-        "lint": "pint",
         "test:refacto": "rector --dry-run",
-        "test:lint": "pint --test",
         "test:types": "phpstan analyse --ansi",
         "test:unit": "pest --colors=always",
         "test": [
             "@test:lint",
+            "@test:refacto",
             "@test:types",
             "@test:unit"
         ]
