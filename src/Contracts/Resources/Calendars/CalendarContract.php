@@ -50,6 +50,10 @@ interface CalendarContract
     /**
      * Get all calendars in a location.
      *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/e55dec1be7bee-get-calendars
      */
     public function list(string $locationId, array $params = []): array|string;

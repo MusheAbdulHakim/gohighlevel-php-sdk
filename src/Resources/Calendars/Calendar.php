@@ -34,7 +34,7 @@ final class Calendar implements CalendarContract
     {
         $payload = Payload::put("calendars/{$calendarId}", $params);
 
-        return $this->transporter->requestObject($payload)->get('calendar');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -44,7 +44,7 @@ final class Calendar implements CalendarContract
     {
         $payload = Payload::get("calendars/{$calendarId}");
 
-        return $this->transporter->requestObject($payload)->get('calendar');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -65,7 +65,7 @@ final class Calendar implements CalendarContract
         $params['locationId'] = $locationId;
         $payload = Payload::get('calendars/', $params);
 
-        return $this->transporter->requestObject($payload)->get('calendars');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -85,7 +85,7 @@ final class Calendar implements CalendarContract
         $params['name'] = $name;
         $payload = Payload::create('calendars/', $params);
 
-        return $this->transporter->requestObject($payload)->get('calendar');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**

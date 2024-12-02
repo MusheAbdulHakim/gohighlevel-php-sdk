@@ -13,6 +13,7 @@ final class InvalidResponseException extends Exception
     {
         $message = ($response->getReasonPhrase() ?: (string) $response->getStatusCode()) ?: 'Unknown error';
 
+        // @phpstan-ignore-next-line
         if (is_array($message)) {
             $message = implode(PHP_EOL, $message);
         }

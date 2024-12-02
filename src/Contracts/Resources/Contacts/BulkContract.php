@@ -9,7 +9,8 @@ interface BulkContract
     /**
      * Add/Remove Contacts From Business
      *
-     * @return array<string,number>|string
+     * @param  array<string>  $ids
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/c37a9d47b1f0c-add-remove-contacts-from-business
      */

@@ -65,7 +65,7 @@ class CustomProvider implements CustomProviderContract
     /**
      * {@inheritDoc}
      */
-    public function disconnectConfig(string $locationId, bool $liveMode): array
+    public function disconnectConfig(string $locationId, bool $liveMode): array|string
     {
         $params['liveMode'] = $liveMode;
         $payload = Payload::post("payments/custom-provider/disconnect?locationId={$locationId}", $params);
@@ -74,9 +74,9 @@ class CustomProvider implements CustomProviderContract
     }
 
     /**
-     * {@inheritDoc}
+     * @return array<mixed>|string
      */
-    public function disconnect(string $locationId, bool $liveMode): array
+    public function disconnect(string $locationId, bool $liveMode): array|string
     {
         return $this->disconnectConfig($locationId, $liveMode);
     }

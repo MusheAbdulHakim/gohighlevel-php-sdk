@@ -30,8 +30,8 @@ interface OpportunityContract
      * Update Opportunity
      *
      *
-     * @param  array<string,number>  $params
-     * @return array<string,number,bool>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/ca75b3ab9e828-update-opportunity
      */

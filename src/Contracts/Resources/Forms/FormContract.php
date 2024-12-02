@@ -15,7 +15,7 @@ interface FormContract
      * Get Forms Submissions
      *
      * @param  array<string,number>  $params
-     * @return array<array<object>,object>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/a6114bd7685d1-get-forms-submissions
      */
@@ -34,7 +34,7 @@ interface FormContract
      * Get Forms
      *
      * @param  array<string,number>  $params
-     * @return array<array<object>,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/49e29c1716c61-get-forms
      */

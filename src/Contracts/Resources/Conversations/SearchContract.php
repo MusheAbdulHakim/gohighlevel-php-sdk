@@ -10,7 +10,7 @@ interface SearchContract
      * Returns a list of all conversations matching the search criteria along with the sort and filter options selected.
      *
      * @param  array<string,number>  $parameters
-     * @return array<array<object>,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d45ae3189eea8-search-conversations
      */

@@ -23,7 +23,8 @@ class Search implements SearchContract
     }
 
     /**
-     * {@inheritDoc}
+     * @param  array<string>  $params
+     * @return array<mixed>|string
      */
     public function query(array $params = []): array|string
     {
@@ -38,6 +39,6 @@ class Search implements SearchContract
     {
         $payload = Payload::get("locations/{$locationId}/tasks/search", $params);
 
-        return $this->transporter->requestObject($payload)->get('tasks');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

@@ -12,7 +12,7 @@ final readonly class Response
     /**
      * Creates a new Response value object.
      *
-     * @param  array<number, string>|string  $data
+     * @param  array<mixed>|string  $data
      */
     private function __construct(
         private array|string $data)
@@ -24,10 +24,10 @@ final readonly class Response
      * Creates a new Response value object from the given data.
      *
      *
-     * @param  array<string,number>|string  $data
-     * @param  array<string, array<number, string>, bool, number>  $headers
+     * @param  array<mixed>|string  $data
+     * @param  array<mixed>  $headers
      */
-    public static function from(array|string $data, array $headers): self
+    public static function from(array|string $data, array $headers = []): self
     {
         return new self($data);
     }
@@ -35,7 +35,7 @@ final readonly class Response
     /**
      * Returns the response data.
      *
-     * @return array<string, array<number, string>, number, bool>|string
+     * @return array<mixed>|string
      */
     public function data(): array|string
     {
@@ -44,10 +44,8 @@ final readonly class Response
 
     /**
      * Get item from the response data.
-     *
-     * @return array<string, number, array<string, number>>|string
      */
-    public function get(string $key): array|string
+    public function get(string $key): mixed
     {
         return $this->data[$key];
     }

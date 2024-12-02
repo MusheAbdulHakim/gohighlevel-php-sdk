@@ -17,7 +17,7 @@ interface ConversationContract
      * Creates a new conversation with the data provide
      *
      * @param  array<string>  $params
-     * @return array<string,number, bool>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/8d0b19e09176e-create-conversation
      */
@@ -37,8 +37,8 @@ interface ConversationContract
     /**
      * Update Conversation
      *
-     * @param  array<string,number,bool,object>  $params
-     * @return array<string,bool, number>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/f6c7d276afe8e-update-conversation
      */

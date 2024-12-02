@@ -21,7 +21,7 @@ final class Group implements GroupContract
             'locationId' => $locationId,
         ]);
 
-        return $this->transporter->requestObject($payload)->get('groups');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -31,7 +31,7 @@ final class Group implements GroupContract
     {
         $payload = Payload::create('calendars/groups', $params);
 
-        return $this->transporter->requestObject($payload)->get('group');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -64,7 +64,7 @@ final class Group implements GroupContract
     {
         $payload = Payload::put("calendars/groups/{$groupId}", $params);
 
-        return $this->transporter->requestObject($payload)->get('group');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -75,6 +75,6 @@ final class Group implements GroupContract
         $params['isActive'] = $isActive;
         $payload = Payload::put("calendars/groups/{$groupId}/status", $params);
 
-        return $this->transporter->requestObject($payload)->get('group');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

@@ -19,7 +19,7 @@ final class Appointment implements AppointmentContract
     {
         $payload = Payload::get("contacts/{$contactId}/appointments");
 
-        return $this->transporter->requestObject($payload)->get('events');
+        return $this->transporter->requestObject($payload)->data();
 
     }
 }

@@ -19,6 +19,6 @@ final class Company implements CompanyContract
     {
         $payload = Payload::get("companies/{$companyId}");
 
-        return $this->transporter->requestObject($payload)->get('company');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

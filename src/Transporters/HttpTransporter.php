@@ -43,7 +43,6 @@ final readonly class HttpTransporter implements TransporterContract
     /**
      * {@inheritDoc}
      *
-     * @return Response<string,number>|array<string, number, bool>
      *
      * @throws ErrorException
      * @throws JsonException
@@ -69,7 +68,7 @@ final readonly class HttpTransporter implements TransporterContract
         $this->throwIfJsonError($response, $contents);
 
         try {
-            /** @var array{error?: array{message: string, type: string, code: string}} $data */
+            /** @phpstan-assert array{error?: array{message: string, type: string, code: string}} $data */
             $data = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
         } catch (JsonException $jsonException) {
             throw new UnserializableResponse($jsonException);

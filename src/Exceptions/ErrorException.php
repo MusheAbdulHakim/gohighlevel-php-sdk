@@ -11,7 +11,7 @@ final class ErrorException extends Exception
     /**
      * Creates a new Exception instance.
      *
-     * @param  array<string,number,null,bool>  $contents
+     * @param  array<mixed>  $contents
      */
     public function __construct(private readonly array $contents)
     {
@@ -35,7 +35,7 @@ final class ErrorException extends Exception
     /**
      * Returns the error type.
      */
-    public function getErrorType(): string|int|null|boolean
+    public function getErrorType(): string|bool|int|null
     {
         return $this->contents['type'];
     }
