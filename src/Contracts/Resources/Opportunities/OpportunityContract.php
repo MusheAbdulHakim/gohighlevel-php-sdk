@@ -9,6 +9,9 @@ interface OpportunityContract
     /**
      * Get Opportunity
      *
+     *
+     * @param string $id
+     * @return array<string,number>|string
      * @see https://highlevel.stoplight.io/docs/integrations/31798edaafcba-get-opportunity
      */
     public function get(string $id): array|string;
@@ -16,6 +19,9 @@ interface OpportunityContract
     /**
      * Delete Opportunity
      *
+     *
+     * @param string $id
+     * @return array<string,number>|string
      * @see https://highlevel.stoplight.io/docs/integrations/11568af679dff-delete-opportunity
      */
     public function delete(string $id): array|string;

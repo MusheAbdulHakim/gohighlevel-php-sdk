@@ -10,7 +10,7 @@ interface SearchContract
      * Search Sub-Account (Formerly Location)
      *
      * @param  array<string>  $params
-     * @return array<mixed>|string
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/12f3fb56990d3-search-locations
      */
@@ -20,7 +20,7 @@ interface SearchContract
      * Task Search Filter
      *
      * @param  array<string>  $params
-     * @return array<mixed>|string
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/8d73480560089-task-search-filter
      */

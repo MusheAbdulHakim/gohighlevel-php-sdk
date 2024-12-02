@@ -43,7 +43,7 @@ final readonly class HttpTransporter implements TransporterContract
     /**
      * {@inheritDoc}
      *
-     * @return Response<string,number, object>
+     * @return Response<string,number>|array<string, number, boolean>
      *
      * @throws ErrorException
      * @throws JsonException

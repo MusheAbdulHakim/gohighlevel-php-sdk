@@ -10,7 +10,7 @@ interface FunnelContract
      * Fetch List of Funnels
      *
      * @param  array<string>  $params
-     * @return array<object,string,number>|string
+     * @return array<string,number>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/80d7ad39f1e90-fetch-list-of-funnels
      */

@@ -13,7 +13,7 @@ final readonly class Response
 {
     /**
      * Creates a new Response value object.
-     * @param array<number, string, object>|string $data
+     * @param array<number, string>|string $data
      */
     private function __construct(
         private array|string $data)
@@ -25,8 +25,10 @@ final readonly class Response
      * Creates a new Response value object from the given data.
      *
      *
-     * @param  array<string,number, object>|string  $data
+     * @param  array<string,number>|string  $data
      * @param  array<string, array<int, string>>  $headers
+     * 
+     * @return \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
      */
     public static function from(array|string $data, array $headers): self
     {
@@ -46,7 +48,7 @@ final readonly class Response
     /**
      * Get item from the response data.
      *
-     * @return array<string, int, number, object, array<object>>|string
+     * @return array<string, int, number, array<string>>|string
      */
     public function get(string $key): array|string
     {

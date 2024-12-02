@@ -20,8 +20,12 @@ interface TemplateContract
      * List Templates
      *
      *
-     * @param  array<mixed>  $params
-     *
+     * @param string $altId
+     * @param string $altType
+     * @param string $limit
+     * @param string $offset
+     * @param array<string,number> $params
+     * @return array<string,number>|string
      * @see https://highlevel.stoplight.io/docs/integrations/2840a2faefb4f-list-templates
      */
     public function list(string $altId, string $altType, string $limit, string $offset, array $params = []): array|string;
