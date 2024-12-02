@@ -20,7 +20,6 @@ interface InvoiceContract
     /**
      * API to get invoice by invoice id
      *
-     *
      * @param  array<mixed>  $params
      * @return array<mixed>|string
      *
@@ -41,6 +40,7 @@ interface InvoiceContract
     /**
      * Delete invoice
      *
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/af9fb9b428e74-delete-invoice
      */
@@ -48,6 +48,7 @@ interface InvoiceContract
 
     /**
      * Void invoice
+     *
      *
      *
      * @return array<mixed>|string
@@ -89,7 +90,6 @@ interface InvoiceContract
 
     /**
      * List Invoices
-     *
      *
      * @param  array<mixed>  $params
      * @return array<mixed>|string

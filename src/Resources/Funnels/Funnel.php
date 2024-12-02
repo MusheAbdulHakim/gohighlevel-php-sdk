@@ -13,6 +13,9 @@ final class Funnel implements FunnelContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
@@ -21,6 +24,9 @@ final class Funnel implements FunnelContract
         return $this->transporter->requestObject($payload)->get('funnels');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function pages(string $funnelId, string $locationId, int $limit, int $offset, array $params = []): array|string
     {
         $params['funnelId'] = $funnelId;
@@ -32,6 +38,18 @@ final class Funnel implements FunnelContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    public function countPages(string $funnelId, string $locationId, array $params = []): array|string
+    {
+        $params['funnelId'] = $funnelId;
+        $params['locationId'] = $locationId;
+        $payload = Payload::get('funnels/page/count', $params);
+
+        return $this->transporter->requestObject($payload)->data();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function redirect(): RedirectContract
     {
         return new Redirect($this->transporter);

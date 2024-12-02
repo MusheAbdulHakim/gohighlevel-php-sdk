@@ -22,6 +22,9 @@ class Search implements SearchContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function query(array $params = []): array|string
     {
 

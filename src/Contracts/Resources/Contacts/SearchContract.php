@@ -21,8 +21,9 @@ interface SearchContract
      *
      *If Allow Duplicate Contact is disabled under Settings, the global unique identifier will be used for searching the contact. If the setting is enabled, first priority for search is email and the second priority will be phone.
      *
-     * @param  array  $parameters
-     * @return void
+     *
+     * @param  array<mixed>  $parameters
+     * @return array<mixed>|string
      */
-    public function getDuplicate(string $locationId, $parameters = []);
+    public function getDuplicate(string $locationId, $parameters = []): array|string;
 }

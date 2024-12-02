@@ -9,6 +9,9 @@ interface Text2payContract
     /**
      * Create & Send
      *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/e739c3a249591-create-and-send
      */
     public function create(array $params): array|string;

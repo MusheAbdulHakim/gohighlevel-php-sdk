@@ -36,6 +36,8 @@ final class Tag implements TagContract
 
     /**
      * Remove a tag
+     *
+     * @return array<mixed>|string
      */
     public function delete(string $id): array|string
     {

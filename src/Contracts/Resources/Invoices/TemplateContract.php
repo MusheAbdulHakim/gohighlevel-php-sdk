@@ -20,8 +20,7 @@ interface TemplateContract
      * List Templates
      *
      *
-     * @param  array<string>  $params
-     * @return array<mixed>|string
+     * @param  array<mixed>  $params
      *
      * @see https://highlevel.stoplight.io/docs/integrations/2840a2faefb4f-list-templates
      */
@@ -30,8 +29,8 @@ interface TemplateContract
     /**
      * Get a tempalte
      *
-     *
-     * @param  array<string>  $params
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/3bacd8c4310d2-get-an-template
      */

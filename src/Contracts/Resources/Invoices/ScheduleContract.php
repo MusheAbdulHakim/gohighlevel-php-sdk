@@ -9,6 +9,7 @@ interface ScheduleContract
     /**
      * Create Invoice Schedule
      *
+     *
      * @param  array<mixed>  $params
      * @return array<mixed>|string
      *
@@ -18,6 +19,7 @@ interface ScheduleContract
 
     /**
      * List Schedules
+     *
      *
      * @param  array<string>  $params
      * @return array<mixed>|string
@@ -29,6 +31,7 @@ interface ScheduleContract
     /**
      * Get a schedule
      *
+     *
      * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/ada2739ce720d-get-an-schedule
@@ -38,7 +41,6 @@ interface ScheduleContract
     /**
      * Update schedule
      *
-
      * @param  array<mixed>  $params
      * @return array<mixed>|string
      *
@@ -48,6 +50,7 @@ interface ScheduleContract
 
     /**
      * Delete Schedule
+     *
      *
      * @return array<mixed>|string
      *
@@ -77,7 +80,6 @@ interface ScheduleContract
 
     /**
      * Cancel a scheduled invoice
-     *
      *
      * @return array<mixed>|string
      *
