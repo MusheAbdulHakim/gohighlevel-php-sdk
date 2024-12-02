@@ -9,12 +9,20 @@ interface FunnelContract
     /**
      * Fetch List of Funnels
      *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/80d7ad39f1e90-fetch-list-of-funnels
      */
     public function list(string $locationId, array $params = []): array|string;
 
     /**
      * Fetch list of funnel pages
+     *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/99a6409949f15-fetch-list-of-funnel-pages
      */

@@ -9,6 +9,8 @@ interface TimezoneContract
     /**
      * Fetch Timezones
      *
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/588e3c8407166-fetch-timezones
      */
     public function list(string $locationId): array|string;

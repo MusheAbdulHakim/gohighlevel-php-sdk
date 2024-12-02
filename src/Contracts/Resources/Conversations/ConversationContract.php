@@ -17,6 +17,7 @@ interface ConversationContract
      * Creates a new conversation with the data provided
 
      *
+
      * @see https://highlevel.stoplight.io/docs/integrations/8d0b19e09176e-create-conversation
      */
     public function create(array $params): array|string;

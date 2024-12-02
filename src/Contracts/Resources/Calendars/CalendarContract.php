@@ -19,6 +19,7 @@ interface CalendarContract
     /**
      * Update calendar by ID.
      *
+     *
      * @param  array<mixed>  $params
      * @return array<mixed>|string
      *
@@ -29,6 +30,7 @@ interface CalendarContract
     /**
      * Get calendar by ID
      *
+     *
      * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/946f5e91e2532-get-calendar
@@ -38,7 +40,8 @@ interface CalendarContract
     /**
      * Delete Calendar by Id
      *
-     * @return array<string>|string
+     *
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/57177f7074647-delete-calendar
      */
@@ -46,8 +49,6 @@ interface CalendarContract
 
     /**
      * Get all calendars in a location.
-     *
-     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/e55dec1be7bee-get-calendars
      */

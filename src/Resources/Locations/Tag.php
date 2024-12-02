@@ -15,11 +15,11 @@ class Tag implements TagContract
     /**
      * {@inheritDoc}
      */
-    public function lists(string $locationId): array|string
+    public function list(string $locationId): array|string
     {
         $payload = Payload::get("locations/{$locationId}/tags");
 
-        return $this->transporter->requestObject($payload)->get('tags');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -29,7 +29,7 @@ class Tag implements TagContract
     {
         $payload = Payload::create("locations/{$locationId}/tags", $params);
 
-        return $this->transporter->requestObject($payload)->get('tag');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -39,7 +39,7 @@ class Tag implements TagContract
     {
         $payload = Payload::get("locations/{$locationId}/tags/{$tagId}");
 
-        return $this->transporter->requestObject($payload)->get('tag');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -49,7 +49,7 @@ class Tag implements TagContract
     {
         $payload = Payload::put("locations/{$locationId}/tags/{$tagId}", $params);
 
-        return $this->transporter->requestObject($payload)->get('tag');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**

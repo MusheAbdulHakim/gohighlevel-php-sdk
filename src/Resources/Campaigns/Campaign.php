@@ -12,6 +12,9 @@ final class Campaign implements CampaignContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;

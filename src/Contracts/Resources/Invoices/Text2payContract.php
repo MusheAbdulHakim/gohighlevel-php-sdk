@@ -15,6 +15,9 @@ interface Text2payContract
 
     /**
      * Update & Send
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      */
     public function update(string $id, array $params): array|string;
 }

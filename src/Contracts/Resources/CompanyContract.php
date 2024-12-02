@@ -6,5 +6,12 @@ namespace MusheAbdulHakim\GoHighLevel\Contracts\Resources;
 
 interface CompanyContract
 {
-    public function get(string $companyId);
+    /**
+     * Get a company
+     *
+     * @return array<mixed>|string
+     *
+     * @see https://highlevel.stoplight.io/docs/integrations/cc7b8a7892119-get-company
+     */
+    public function get(string $companyId): array|string;
 }

@@ -19,7 +19,7 @@ final class Note implements NoteContract
     {
         $payload = Payload::get("contacts/{$contactId}/notes");
 
-        return $this->transporter->requestObject($payload)->get('notes');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -32,7 +32,7 @@ final class Note implements NoteContract
             'body' => $body,
         ]);
 
-        return $this->transporter->requestObject($payload)->get('note');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -42,7 +42,7 @@ final class Note implements NoteContract
     {
         $payload = Payload::get("contacts/{$contactId}/notes/{$id}");
 
-        return $this->transporter->requestObject($payload)->get('note');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -52,11 +52,16 @@ final class Note implements NoteContract
     {
         $payload = Payload::put("contacts/{$contactId}/notes/{$id}");
 
-        return $this->transporter->requestObject($payload)->get('note');
+        return $this->transporter->requestObject($payload)->data();
     }
 
-    public function delete(string $contactId, string $id): void
+    /**
+     * {@inheritDoc}
+     */
+    public function delete(string $contactId, string $id): array|string
     {
-        Payload::deleteFromUri("contacts/{$contactId}/notes/{$id}");
+        $payload = Payload::deleteFromUri("contacts/{$contactId}/notes/{$id}");
+
+        return $this->transporter->requestObject($payload)->data();
     }
 }

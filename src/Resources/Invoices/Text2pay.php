@@ -12,6 +12,9 @@ final class Text2pay implements Text2payContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(array $params): array|string
     {
         $payload = Payload::post('invoices/text2pay/', $params);
@@ -19,6 +22,9 @@ final class Text2pay implements Text2payContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $id, array $params): array|string
     {
         $payload = Payload::post("invoices/text2pay/{$id}/", $params);

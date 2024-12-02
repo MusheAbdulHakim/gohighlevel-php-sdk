@@ -18,9 +18,8 @@ interface CalendarResourceContract
     /**
      * Update calendar resource by ID
      *
-     *
-     * @param  array<string,number,bool, array<string>>  $params
-     * @return array<string,bool,number>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/20987bed71eb0-update-calendar-resource
      */
@@ -29,7 +28,7 @@ interface CalendarResourceContract
     /**
      * Delete calendar resource by ID
      *
-     * @return array<bool>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/ca9afd52d4d0e-delete-calendar-resource
      */
@@ -39,21 +38,21 @@ interface CalendarResourceContract
      * List calendar resources by resource type and location ID
      *
      *
-     * @param  array<string,number>  $params
-     * @return array<string,bool,number,array<string>>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/e3a7d63a0134b-list-calendar-resources
      */
-    public function list(string $resourceType, $params = []): array|string;
+    public function list(string $resourceType, array $params = []): array|string;
 
     /**
      * Create calendar resource by resource type
      *
      *
-     * @param  array<string,number,array<string>>  $params
-     * @return array<string,bool,number,array<string>>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/cad3af068e0e0-create-calendar-resource
      */
-    public function create(string $resourceType, $params = []): array|string;
+    public function create(string $resourceType, array $params = []): array|string;
 }

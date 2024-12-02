@@ -19,7 +19,7 @@ final class Task implements TaskContract
     {
         $payload = Payload::get("contacts/{$contactId}/tasks");
 
-        return $this->transporter->requestObject($payload)->get('tasks');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -29,7 +29,7 @@ final class Task implements TaskContract
     {
         $payload = Payload::create("contacts/{$contactId}/tasks", $params);
 
-        return $this->transporter->requestObject($payload)->get('task');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -39,7 +39,7 @@ final class Task implements TaskContract
     {
         $payload = Payload::get("contacts/{$contactId}/tasks/{$taskId}");
 
-        return $this->transporter->requestObject($payload)->get('task');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -49,7 +49,7 @@ final class Task implements TaskContract
     {
         $payload = Payload::put("contacts/{$contactId}/tasks/{$taskId}", $params);
 
-        return $this->transporter->requestObject($payload)->get('task');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -71,6 +71,6 @@ final class Task implements TaskContract
             'completed' => $completed,
         ]);
 
-        return $this->transporter->requestObject($payload)->get('task');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

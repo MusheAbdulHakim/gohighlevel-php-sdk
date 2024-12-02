@@ -12,6 +12,9 @@ final class Schedule implements ScheduleContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(array $params): array|string
     {
         $payload = Payload::post('invoices/schedule/', $params);
@@ -19,6 +22,9 @@ final class Schedule implements ScheduleContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $altId, string $altType, string $limit, string $offset, array $params = []): array|string
     {
         $params['altId'] = $altId;
@@ -31,6 +37,9 @@ final class Schedule implements ScheduleContract
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $scheduleId, string $altId, string $altType): array|string
     {
         $params['altId'] = $altId;
@@ -40,6 +49,9 @@ final class Schedule implements ScheduleContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $scheduleId, string $altId, string $altType, array $params = []): array|string
     {
         $params['altId'] = $altId;
@@ -49,6 +61,9 @@ final class Schedule implements ScheduleContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function delete(string $scheduleId, string $altId, string $altType): array|string
     {
         $payload = Payload::deleteFromUri("invoices/schedule/{$scheduleId}?altId={$altId}&altType={$altType}");
@@ -56,6 +71,9 @@ final class Schedule implements ScheduleContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function invoice(string $scheduleId, string $altId, string $altType, array $params): array|string
     {
         $params['altId'] = $altId;
@@ -65,6 +83,9 @@ final class Schedule implements ScheduleContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function autoPayment(string $scheduleId, string $altId, string $altType, array $params): array|string
     {
         $params['altId'] = $altId;
@@ -74,6 +95,9 @@ final class Schedule implements ScheduleContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function cancel(string $scheduleId, string $altId, string $altType): array|string
     {
         $params['altId'] = $altId;
