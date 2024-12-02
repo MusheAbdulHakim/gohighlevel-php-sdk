@@ -58,31 +58,49 @@ class Location implements LocationContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function tag(): TagContract
     {
         return new Tag($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function customField(): CustomFieldContract
     {
         return new CustomField($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function customValue(): CustomValueContract
     {
         return new CustomValue($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function template(): TemplateContract
     {
         return new Template($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function search(): SearchContract
     {
         return new Search($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function timezone(): TimezoneContract
     {
         return new Timezone($this->transporter);

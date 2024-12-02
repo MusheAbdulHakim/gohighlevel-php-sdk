@@ -12,6 +12,9 @@ final class Event implements EventContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
@@ -43,7 +46,7 @@ final class Event implements EventContract
         $params['locationId'] = $locationId;
         $payload = Payload::get('calendars/blocked-slots/', $params);
 
-        return $this->transporter->requestObject($payload)->get('events');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -53,7 +56,7 @@ final class Event implements EventContract
     {
         $payload = Payload::get("calendars/events/appointments/{$eventId}");
 
-        return $this->transporter->requestObject($payload)->get('event');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**

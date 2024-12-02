@@ -19,7 +19,17 @@ class Search implements SearchContract
     {
         $payload = Payload::get('locations/search', $params);
 
-        return $this->transporter->requestObject($payload)->get('locations');
+        return $this->transporter->requestObject($payload)->data();
+    }
+
+    /**
+     * @param  array<string>  $params
+     * @return array<mixed>|string
+     */
+    public function query(array $params = []): array|string
+    {
+
+        return $this->search($params);
     }
 
     /**
@@ -29,6 +39,6 @@ class Search implements SearchContract
     {
         $payload = Payload::get("locations/{$locationId}/tasks/search", $params);
 
-        return $this->transporter->requestObject($payload)->get('tasks');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

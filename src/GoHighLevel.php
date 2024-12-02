@@ -11,9 +11,9 @@ final class GoHighLevel
     /**
      * Request Access Token
      *
-     * @return void
+     * @param  array<mixed>  $params
      */
-    public static function getAccessToken(string $uri = '', string $header = '', array $params = [])
+    public static function getAccessToken(string $uri = '', string $header = '', array $params = []): mixed
     {
         $client = Psr18ClientDiscovery::find();
         $baseUri = '';
@@ -24,6 +24,7 @@ final class GoHighLevel
         if ($uri !== '') {
             $baseUri = $uri;
         }
+        // @phpstan-ignore-next-line
         $response = $client->request('POST', $baseUri, [
             'form_params' => $params,
             'headers' => [

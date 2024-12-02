@@ -19,7 +19,7 @@ class CustomValue implements CustomValueContract
     {
         $payload = Payload::get("locations/{$locationId}/customValues");
 
-        return $this->transporter->requestObject($payload)->get('customValues');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -29,7 +29,7 @@ class CustomValue implements CustomValueContract
     {
         $payload = Payload::create("locations/{$locationId}/customValues", $params);
 
-        return $this->transporter->requestObject($payload)->get('customValue');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -39,7 +39,7 @@ class CustomValue implements CustomValueContract
     {
         $payload = Payload::get("locations/{$locationId}/customValues/{$id}");
 
-        return $this->transporter->requestObject($payload)->get('customValue');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -49,7 +49,7 @@ class CustomValue implements CustomValueContract
     {
         $payload = Payload::put("locations/{$locationId}/customValues/{$id}", $params);
 
-        return $this->transporter->requestObject($payload)->get('customValue');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**

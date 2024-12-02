@@ -59,7 +59,7 @@ final class Conversation implements ConversationContract
     }
 
     /**
-     * Conversation Email
+     * {@inheritDoc}
      */
     public function email(): EmailContract
     {
@@ -67,13 +67,16 @@ final class Conversation implements ConversationContract
     }
 
     /**
-     * Conversation Message
+     * {@inheritDoc}
      */
     public function message(): MessageContract
     {
         return new Message($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function search(): SearchContract
     {
         return new Search($this->transporter);

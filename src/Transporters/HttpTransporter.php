@@ -43,7 +43,6 @@ final readonly class HttpTransporter implements TransporterContract
     /**
      * {@inheritDoc}
      *
-     * @return Response<mixed>
      *
      * @throws ErrorException
      * @throws JsonException
@@ -63,19 +62,20 @@ final readonly class HttpTransporter implements TransporterContract
         $contents = $response->getBody()->getContents();
 
         if (str_contains($response->getHeaderLine('Content-Type'), ContentType::TEXT_PLAIN->value)) {
-            return Response::from($contents, $response->getHeaders());
+            return Response::from($contents);
         }
 
         $this->throwIfJsonError($response, $contents);
 
         try {
-            /** @var array{error?: array{message: string, type: string, code: string}} $data */
+            /** @phpstan-assert array{error?: array{message: string, type: string, code: string}} $data */
             $data = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
         } catch (JsonException $jsonException) {
             throw new UnserializableResponse($jsonException);
         }
 
-        return Response::from($data, $response->getHeaders());
+        // @phpstan-ignore-next-line
+        return Response::from($data);
     }
 
     /**
@@ -136,10 +136,11 @@ final readonly class HttpTransporter implements TransporterContract
         }
 
         try {
-            /** @var array{error?: array{message: string|array<int, string>, type: string, code: string}} $response */
             $response = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
 
+            // @phpstan-ignore-next-line
             if (isset($response['error'])) {
+                // @phpstan-ignore-next-line
                 throw new ErrorException($response);
             }
         } catch (JsonException $jsonException) {

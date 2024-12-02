@@ -9,6 +9,8 @@ interface WorkflowsContract
     /**
      * Get Workflow
      *
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/070d2f9be5549-get-workflow
      */
     public function get(string $locationId): array|string;

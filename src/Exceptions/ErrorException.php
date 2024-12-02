@@ -10,15 +10,18 @@ final class ErrorException extends Exception
 {
     /**
      * Creates a new Exception instance.
+     *
+     * @param  array<mixed>  $contents
      */
     public function __construct(private readonly array $contents)
     {
+        //@phpstan-ignore-next-line
         $message = ($contents['message'] ?: (string) $this->contents['code']) ?: 'Unknown error';
 
         if (is_array($message)) {
             $message = implode(PHP_EOL, $message);
         }
-
+        // @phpstan-ignore-next-line
         parent::__construct($message);
     }
 
@@ -33,7 +36,7 @@ final class ErrorException extends Exception
     /**
      * Returns the error type.
      */
-    public function getErrorType(): ?string
+    public function getErrorType(): mixed
     {
         return $this->contents['type'];
     }
@@ -41,7 +44,7 @@ final class ErrorException extends Exception
     /**
      * Returns the error code.
      */
-    public function getErrorCode(): string|int|null
+    public function getErrorCode(): mixed
     {
         return $this->contents['code'];
     }

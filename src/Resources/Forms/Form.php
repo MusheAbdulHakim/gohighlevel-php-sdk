@@ -26,11 +26,11 @@ final class Form implements FormContract
     /**
      * {@inheritDoc}
      */
-    public function uploadToCustomFields(string $locationId, string $contactId, array $params = []): array|string
+    public function uploadToCustomFields(string $locationId, string $contactId): array|string
     {
         $params['locationId'] = $locationId;
         $params['contactId'] = $contactId;
-        $payload = Payload::upload('forms/upload-custom-files/', $params);
+        $payload = Payload::post("forms/upload-custom-files?contactId=$contactId&locationId=$locationId");
 
         return $this->transporter->requestObject($payload)->data();
     }
@@ -40,8 +40,7 @@ final class Form implements FormContract
      */
     public function list(string $locationId, array $params = []): array|string
     {
-        $params['locationId'] = $locationId;
-        $payload = Payload::get('forms/', $params);
+        $payload = Payload::get("forms/?locationId=$locationId", $params);
 
         return $this->transporter->requestObject($payload)->data();
     }

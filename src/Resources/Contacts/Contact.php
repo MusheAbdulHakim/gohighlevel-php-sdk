@@ -21,21 +21,17 @@ final class Contact implements ContactContract
     use Transportable;
 
     /**
-     * Get Contact by contactId
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/00c5ff21f0030-get-contact
+     * {@inheritDoc}
      */
     public function get(string $contactId): string|array
     {
         $payload = Payload::get("contacts/{$contactId}");
 
-        return $this->transporter->requestObject($payload)->get('contact');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * Update a Contact
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/9ce5a739d4fb9-update-contact
+     * {@inheritDoc}
      */
     public function update(string $contactId, array $params): string|array
     {
@@ -45,33 +41,27 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Delete a Contact
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/28ab84e9522b6-delete-contact
+     * {@inheritDoc}
      */
-    public function delete(string $contactId): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
+    public function delete(string $contactId): array|string
     {
         $payload = Payload::delete('contacts/', $contactId);
 
-        return $this->transporter->requestObject($payload);
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * Upsert a contact
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/f71bbdd88f028-upsert-contact
+     * {@inheritDoc}
      */
-    public function upsert(array $params): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
+    public function upsert(array $params): array|string
     {
         $payload = Payload::create('contacts/upsert', $params);
 
-        return $this->transporter->requestObject($payload);
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * Get Contacts By BusinessId
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/8efc6d5a99417-get-contacts-by-business-id
+     * {@inheritDoc}
      */
     public function byBusiness(string $businessId): string|array
     {
@@ -79,25 +69,21 @@ final class Contact implements ContactContract
             'locationId' => $businessId,
         ]);
 
-        return $this->transporter->requestObject($payload)->get('contacts');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * Create Contact
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/4c8362223c17b-create-contact
+     * {@inheritDoc}
      */
-    public function create(array $params): \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
+    public function create(array $params): array|string
     {
         $payload = Payload::create('contacts/', $params);
 
-        return $this->transporter->requestObject($payload);
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
-     * Get Contacts
-     *
-     * @see https://highlevel.stoplight.io/docs/integrations/ab55933a57f6f-get-contacts
+     * {@inheritDoc}
      */
     public function list(string $locationId): string|array
     {
@@ -107,11 +93,11 @@ final class Contact implements ContactContract
 
         return $this->transporter
             ->requestObject($payload)
-            ->get('contacts');
+            ->data();
     }
 
     /**
-     * Contact Tasks
+     * {@inheritDoc}
      */
     public function tasks(): TaskContract
     {
@@ -119,7 +105,7 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Contact Appointments
+     * {@inheritDoc}
      */
     public function appointments(): AppointmentContract
     {
@@ -127,7 +113,7 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Contact Tags
+     * {@inheritDoc}
      */
     public function tags(): TagContract
     {
@@ -135,7 +121,7 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Contact Notes
+     * {@inheritDoc}
      */
     public function notes(): NoteContract
     {
@@ -143,7 +129,7 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Contact Campaign
+     * {@inheritDoc}
      */
     public function campaign(): CampaignContract
     {
@@ -151,7 +137,7 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Contact Workflow
+     * {@inheritDoc}
      */
     public function workflow(): WorkflowContract
     {
@@ -159,15 +145,15 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Add/Remove Contacts From Business
+     * {@inheritDoc}
      */
-    public function bulk(string $locationId, array $ids, string $businessId): array
+    public function bulk(string $locationId, array $ids, string $businessId): array|string
     {
         return (new Bulk($this->transporter))->addOrRemove($locationId, $ids, $businessId);
     }
 
     /**
-     * Search Contacts
+     * {@inheritDoc}
      */
     public function search(): SearchContract
     {
@@ -175,7 +161,7 @@ final class Contact implements ContactContract
     }
 
     /**
-     * Contact Followers
+     * {@inheritDoc}
      */
     public function followers(): FollowerContract
     {

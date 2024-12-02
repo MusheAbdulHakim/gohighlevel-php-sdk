@@ -18,7 +18,7 @@ class Opportunity implements OpportunityContract
     {
         $payload = Payload::get("opportunities/{$id}");
 
-        return $this->transporter->requestObject($payload)->get('opportunity');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -38,7 +38,7 @@ class Opportunity implements OpportunityContract
     {
         $payload = Payload::put("opportunities/{$id}", $params);
 
-        return $this->transporter->requestObject($payload)->get('opportunity');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**
@@ -69,7 +69,7 @@ class Opportunity implements OpportunityContract
     {
         $payload = Payload::create('opportunities', $params);
 
-        return $this->transporter->requestObject($payload)->get('opportunity');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**

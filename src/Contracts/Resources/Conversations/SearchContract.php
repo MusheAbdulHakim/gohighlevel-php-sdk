@@ -9,9 +9,10 @@ interface SearchContract
     /**
      * Returns a list of all conversations matching the search criteria along with the sort and filter options selected.
      *
-     * @param  array  $parameters
+     * @param  array<string,number>  $parameters
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d45ae3189eea8-search-conversations
      */
-    public function make(string $locationId, $parameters = []): array|string;
+    public function make(string $locationId, array $parameters = []): array|string;
 }

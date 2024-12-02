@@ -12,11 +12,14 @@ final class Campaign implements CampaignContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $locationId, array $params = []): array|string
     {
         $params['locationId'] = $locationId;
         $payload = Payload::get('campaigns/', $params);
 
-        return $this->transporter->requestObject($payload)->get('campaigns');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

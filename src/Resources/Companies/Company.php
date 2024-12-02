@@ -12,10 +12,13 @@ final class Company implements CompanyContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function get(string $companyId): array|string
     {
         $payload = Payload::get("companies/{$companyId}");
 
-        return $this->transporter->requestObject($payload)->get('company');
+        return $this->transporter->requestObject($payload)->data();
     }
 }

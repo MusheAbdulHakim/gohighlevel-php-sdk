@@ -15,6 +15,9 @@ final class Invoice implements InvoiceContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function generateNumber(string $altId, string $altType): array|string
     {
         $params['altId'] = $altId;
@@ -27,15 +30,16 @@ final class Invoice implements InvoiceContract
     /**
      * {@inheritDoc}
      */
-    public function get(string $invoiceId, string $altId, string $altType, array $params = []): array|string
+    public function get(string $invoiceId, array $params = []): array|string
     {
-        $params['altId'] = $altId;
-        $params['altType'] = $altType;
         $payload = Payload::put("invoices/{$invoiceId}/", $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $invoiceId, array $params): array|string
     {
         $payload = Payload::put("invoices/{$invoiceId}", $params);
@@ -43,6 +47,9 @@ final class Invoice implements InvoiceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function delete(string $invoiceId, string $altId, string $altType): array|string
     {
         $payload = Payload::deleteFromUri("invoices/{$invoiceId}?altId={$altId}&altType={$altType}");
@@ -50,6 +57,9 @@ final class Invoice implements InvoiceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function void(string $invoiceId, string $altId, string $altType): array|string
     {
         $params['altId'] = $altId;
@@ -59,6 +69,9 @@ final class Invoice implements InvoiceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function send(string $invoiceId, array $params): array|string
     {
         $payload = Payload::post("invoices/{$invoiceId}/send/", $params);
@@ -66,6 +79,9 @@ final class Invoice implements InvoiceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function recordPayment(string $invoiceId, array $params): array|string
     {
         $payload = Payload::post("invoices/{$invoiceId}/record-payment", $params);
@@ -74,6 +90,9 @@ final class Invoice implements InvoiceContract
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(array $params): array|string
     {
 
@@ -82,6 +101,9 @@ final class Invoice implements InvoiceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $altId, string $altType, string $limit, string $offset, array $params = []): array|string
     {
         $params['altId'] = $altId;
@@ -93,16 +115,25 @@ final class Invoice implements InvoiceContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function template(): TemplateContract
     {
         return new Template($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function schedule(): ScheduleContract
     {
         return new Schedule($this->transporter);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function text2pay(): Text2payContract
     {
         return new Text2pay($this->transporter);

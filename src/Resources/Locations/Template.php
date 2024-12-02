@@ -20,7 +20,7 @@ class Template implements TemplateContract
         $params['originId'] = $originId;
         $payload = Payload::get("locations/{$locationId}/templates", $params);
 
-        return $this->transporter->requestObject($payload)->get('templates');
+        return $this->transporter->requestObject($payload)->data();
     }
 
     /**

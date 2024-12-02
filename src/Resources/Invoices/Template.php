@@ -12,6 +12,9 @@ final class Template implements TemplateContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(array $params): array|string
     {
         $payload = Payload::post('invoices/template/', $params);
@@ -19,6 +22,9 @@ final class Template implements TemplateContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function list(string $altId, string $altType, string $limit, string $offset, array $params = []): array|string
     {
         $params['altId'] = $altId;
@@ -30,15 +36,19 @@ final class Template implements TemplateContract
         return $this->transporter->requestObject($payload)->data();
     }
 
-    public function get(string $templateId, string $altId, string $altType): array|string
+    /**
+     * {@inheritDoc}
+     */
+    public function get(string $templateId, array $params = []): array|string
     {
-        $params['altId'] = $altId;
-        $params['altType'] = $altType;
         $payload = Payload::get("invoices/template/{$templateId}/");
 
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $templateId, array $params = []): array|string
     {
         $payload = Payload::put("invoices/template/{$templateId}/", $params);
@@ -46,6 +56,9 @@ final class Template implements TemplateContract
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function delete(string $templateId): array|string
     {
         $payload = Payload::deleteFromUri("invoices/template/{$templateId}/");

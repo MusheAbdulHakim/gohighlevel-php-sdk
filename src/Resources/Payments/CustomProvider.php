@@ -15,8 +15,7 @@ class CustomProvider implements CustomProviderContract
      */
     public function create(string $locationId, array $params = []): array|string
     {
-        $params['locationId'] = $locationId;
-        $payload = Payload::create('payments/custom-provider/provider', $params);
+        $payload = Payload::create("payments/custom-provider/provider?locationId=$locationId", $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
@@ -26,8 +25,7 @@ class CustomProvider implements CustomProviderContract
      */
     public function delete(string $locationId): array|string
     {
-        $params['locationId'] = $locationId;
-        $payload = Payload::deleteFromUri('payments/custom-provider/provider');
+        $payload = Payload::deleteFromUri("payments/custom-provider/provider?locationId=$locationId");
 
         return $this->transporter->requestObject($payload)->data();
     }
@@ -62,5 +60,24 @@ class CustomProvider implements CustomProviderContract
         $payload = Payload::post("payments/custom-provider/disconnect?locationId={$locationId}", $params);
 
         return $this->transporter->requestObject($payload)->data();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function disconnectConfig(string $locationId, bool $liveMode): array|string
+    {
+        $params['liveMode'] = $liveMode;
+        $payload = Payload::post("payments/custom-provider/disconnect?locationId={$locationId}", $params);
+
+        return $this->transporter->requestObject($payload)->data();
+    }
+
+    /**
+     * @return array<mixed>|string
+     */
+    public function disconnect(string $locationId, bool $liveMode): array|string
+    {
+        return $this->disconnectConfig($locationId, $liveMode);
     }
 }

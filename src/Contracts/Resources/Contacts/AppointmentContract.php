@@ -9,7 +9,10 @@ interface AppointmentContract
     /**
      * Get Appointments for Contact
      *
+     *
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/6015cf49a7ae8-get-appointments-for-contact
      */
-    public function contacts(string $contactId);
+    public function contacts(string $contactId): array|string;
 }

@@ -12,6 +12,9 @@ final class Search implements SearchContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function make(string $locationId, $parameters = []): array|string
     {
         $parameters['locationId'] = $locationId;

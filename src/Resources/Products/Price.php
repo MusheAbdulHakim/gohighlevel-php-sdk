@@ -25,6 +25,7 @@ class Price implements PriceContract
      */
     public function list(string $productId, string $locationId, array $params = []): array|string
     {
+        $params['locationId'] = $locationId;
         $payload = Payload::get("products/{$productId}/price", $params);
 
         return $this->transporter->requestObject($payload)->data();

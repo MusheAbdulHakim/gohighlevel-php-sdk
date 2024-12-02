@@ -17,7 +17,7 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Forms\FormContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Funnels\FunnelContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Invoices\InvoiceContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Locations\LocationContract;
-use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Media\LibraryContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\MediaLibrary\MediaLibraryContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Opportunities\OpportunityContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Payments\PaymentContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Products\ProductContract;
@@ -40,7 +40,7 @@ use MusheAbdulHakim\GoHighLevel\Resources\Forms\Form;
 use MusheAbdulHakim\GoHighLevel\Resources\Funnels\Funnel;
 use MusheAbdulHakim\GoHighLevel\Resources\Invoices\Invoice;
 use MusheAbdulHakim\GoHighLevel\Resources\Locations\Location;
-use MusheAbdulHakim\GoHighLevel\Resources\Media\Library;
+use MusheAbdulHakim\GoHighLevel\Resources\MediaLibrary\MediaLibrary;
 use MusheAbdulHakim\GoHighLevel\Resources\Opportunities\Opportunity;
 use MusheAbdulHakim\GoHighLevel\Resources\Payments\Payment;
 use MusheAbdulHakim\GoHighLevel\Resources\Products\Product;
@@ -116,9 +116,9 @@ final readonly class Client implements ClientContract
         return new Location($this->transporter);
     }
 
-    public function media(): LibraryContract
+    public function mediaLibrary(): MediaLibraryContract
     {
-        return new Library($this->transporter);
+        return new MediaLibrary($this->transporter);
     }
 
     public function funnel(): FunnelContract
@@ -131,37 +131,37 @@ final readonly class Client implements ClientContract
         return new Opportunity($this->transporter);
     }
 
-    public function Payments(): PaymentContract
+    public function payments(): PaymentContract
     {
         return new Payment($this->transporter);
     }
 
-    public function Products(): ProductContract
+    public function products(): ProductContract
     {
         return new Product($this->transporter);
     }
 
-    public function Saas(): SaasContract
+    public function saas(): SaasContract
     {
         return new Saas($this->transporter);
     }
 
-    public function Snapshot(): SnapshotsContract
+    public function snapshot(): SnapshotsContract
     {
         return new Snapshot($this->transporter);
     }
 
-    public function Survey(): SurveysContract
+    public function survey(): SurveysContract
     {
         return new Survey($this->transporter);
     }
 
-    public function User(): UsersContract
+    public function user(): UsersContract
     {
         return new User($this->transporter);
     }
 
-    public function Workflow(): WorkflowsContract
+    public function workflow(): WorkflowsContract
     {
         return new Workflow($this->transporter);
     }

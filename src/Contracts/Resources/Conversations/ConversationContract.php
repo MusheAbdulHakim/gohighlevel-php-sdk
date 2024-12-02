@@ -14,8 +14,10 @@ interface ConversationContract
     /**
      * Create Conversation
      *
-     * Creates a new conversation with the data provided
-
+     * Creates a new conversation with the data provide
+     *
+     * @param  array<string>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/8d0b19e09176e-create-conversation
      */
@@ -26,6 +28,8 @@ interface ConversationContract
      *
      * Get the conversation details based on the conversation ID
      *
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/d22efcfdb0c80-get-conversation
      */
     public function get(string $conversationId): array|string;
@@ -33,6 +37,8 @@ interface ConversationContract
     /**
      * Update Conversation
      *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/f6c7d276afe8e-update-conversation
      */
@@ -43,13 +49,24 @@ interface ConversationContract
      *
      * Delete the conversation details based on the conversation ID
      *
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/d6b698c33ff49-delete-conversation
      */
     public function delete(string $conversationId): array|string;
 
+    /**
+     * Conversation Email
+     */
     public function email(): EmailContract;
 
-    public function Message(): MessageContract;
+    /**
+     * Conversaion Message
+     */
+    public function message(): MessageContract;
 
+    /**
+     * Conversation Search
+     */
     public function search(): SearchContract;
 }

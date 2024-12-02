@@ -1,7 +1,4 @@
-<u>
-
 # Documentation
-</u>
 
 ## [Authentication](./auth.md)
 
@@ -13,9 +10,15 @@
 ## [Conversations Api](./Conversation.md)
 ## [Courses Api](./Courses.md)
 ## [Forms Api](./Forms.md)
+## [Invoices Api](./Invoices.md)
+## [Trigger Links Api](./Trigger-Link.md)
+## [Sub-Account (Formerly location) Api](./Locations.md)
+## [Media Library Api](./Media-Library.md)
 ## [Funnels Api](./Funnels.md)
-## [Locations Api](./Locations.md)
+## [Payments Api](./Payments.md)
+## [Products Api](./Products.md)
 ## [Saas Api](./Saas.md)
+## [Snapshots Api](./Snapshot.md)
 ## [Users Api](./Users.md)
 ## [Workflow Api](./Workflow.md)
 

@@ -12,12 +12,19 @@ interface ProductContract
     /**
      * Get Product by ID
      *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/272e8f008adb0-get-product-by-id
      */
     public function get(string $productId, array $params = []): array|string;
 
     /**
      * Delete Product by ID
+     *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/285e8c049b2e1-delete-product-by-id
      */
@@ -26,12 +33,19 @@ interface ProductContract
     /**
      * Update Product by ID
      *
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/469d7a90e0d15-update-product-by-id
      */
     public function update(string $productId, array $params = []): array|string;
 
     /**
      * Create Product
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/9eda2dc176c9c-create-product
      */
@@ -40,7 +54,8 @@ interface ProductContract
     /**
      * List Products
      *
-     * @param  array  $params  = []
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/7f6ce42d09400-list-products
      */

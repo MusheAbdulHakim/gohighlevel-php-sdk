@@ -240,6 +240,15 @@ Or
     $searchResource = $contactResource->search();
 ```
 
+### Search Contact
+
+```php
+
+    $result = $searchResource->query([
+        //query parameters
+    ]);
+```
+
 ### Get Duplicate Contact
 
 ```php

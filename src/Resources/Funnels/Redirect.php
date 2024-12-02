@@ -12,6 +12,9 @@ final class Redirect implements RedirectContract
 {
     use Transportable;
 
+    /**
+     * {@inheritDoc}
+     */
     public function create(array $params): array|string
     {
         $paylaod = Payload::post('funnels/lookup/redirect', $params);
@@ -19,6 +22,9 @@ final class Redirect implements RedirectContract
         return $this->transporter->requestObject($paylaod)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function update(string $id, array $params): array|string
     {
         $payload = Payload::patch("funnels/lookup/redirect/{$id}", $params);
@@ -26,16 +32,19 @@ final class Redirect implements RedirectContract
         return $this->transporter->requestObject($payload)->data();
     }
 
-    public function list(string $locationId, int $limit, int $offset): array|string
+    /**
+     * {@inheritDoc}
+     */
+    public function list(string $locationId, array $params = []): array|string
     {
-        $params['locationId'] = $locationId;
-        $params['limit'] = $limit;
-        $params['offset'] = $offset;
-        $payload = Payload::get('funnels/lookup/redirect/list', $params);
+        $payload = Payload::get("funnels/lookup/redirect/list?locationId=$locationId", $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function delete(string $id, string $locationId): array|string
     {
         $payload = Payload::deleteFromUri("funnels/lookup/redirect/{$id}?locationId={$locationId}");

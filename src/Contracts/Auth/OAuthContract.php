@@ -12,12 +12,18 @@ interface OAuthContract
     /**
      * Get Access Token
      *
+     * @param  array<mixed>  $params
+     * @return void
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/00d0c0ecaa369-get-access-token
      */
     public function get(string $client_id, string $client_secret, string $grant_type, array $params = []);
 
     /**
      * Get Location Access Token from Agency Token
+     *
+
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/1a30b217da571-get-location-access-token-from-agency-token
      */
@@ -26,6 +32,8 @@ interface OAuthContract
     /**
      * Get Location where app is installed
      *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/aeed19d08490e-get-location-where-app-is-installed
      */
@@ -33,6 +41,9 @@ interface OAuthContract
 
     /**
      * Get Location where app is installed
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/aeed19d08490e-get-location-where-app-is-installed
      */
