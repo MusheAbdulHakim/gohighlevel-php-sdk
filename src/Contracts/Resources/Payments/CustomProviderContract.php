@@ -19,8 +19,7 @@ interface CustomProviderContract
     /**
      *Deleting an existing integration
      *
-     * @param string $locationId
-     * @return array<string,number,boolean>|string
+     * @return array<string,number,bool>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/97fffb0398f3c-deleting-an-existing-integration
      */
@@ -29,8 +28,8 @@ interface CustomProviderContract
     /**
      * Fetch given provider config
      *
-     * @param string $locationId
      * @return array<string,number>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/dec209bac6191-fetch-given-provider-config
      */
     public function getConfig(string $locationId): array|string;
@@ -38,9 +37,9 @@ interface CustomProviderContract
     /**
      * Create new provider config
      *
-     * @param string $locationId
-     * @param array<string,number> $params
+     * @param  array<string,number>  $params
      * @return array<string,number>|string
+     *
      * @see https://highlevel.stoplight.io/docs/integrations/377c9e577827b-create-new-provider-config
      */
     public function createConfig(string $locationId, array $params): array|string;

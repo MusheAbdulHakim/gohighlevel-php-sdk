@@ -20,7 +20,7 @@ interface MessageContract
      * Get messages by conversation id
      *
      * @param  array<string,number>  $params
-     * @return array<string,boolean,array<string>>|string
+     * @return array<string,bool,array<string>>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/ab21134dad173-get-messages-by-conversation-id
      */

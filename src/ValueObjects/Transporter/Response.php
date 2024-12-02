@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter;
 
 /**
- *
  * @internal
  */
 final readonly class Response
 {
     /**
      * Creates a new Response value object.
-     * @param array<number, string>|string $data
+     *
+     * @param  array<number, string>|string  $data
      */
     private function __construct(
         private array|string $data)
@@ -25,9 +25,7 @@ final readonly class Response
      *
      *
      * @param  array<string,number>|string  $data
-     * @param  array<string, array<number, string>, boolean, number>  $headers
-     * 
-     * @return \MusheAbdulHakim\GoHighLevel\ValueObjects\Transporter\Response
+     * @param  array<string, array<number, string>, bool, number>  $headers
      */
     public static function from(array|string $data, array $headers): self
     {
@@ -37,7 +35,7 @@ final readonly class Response
     /**
      * Returns the response data.
      *
-     * @return array<string, array<number, string>, number, boolean>|string
+     * @return array<string, array<number, string>, number, bool>|string
      */
     public function data(): array|string
     {
@@ -53,5 +51,4 @@ final readonly class Response
     {
         return $this->data[$key];
     }
-
 }
