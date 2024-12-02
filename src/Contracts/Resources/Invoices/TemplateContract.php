@@ -20,8 +20,8 @@ interface TemplateContract
      * List Templates
      *
      *
-     * @param  array<string,number>  $params
-     * @return array<string,number>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/2840a2faefb4f-list-templates
      */

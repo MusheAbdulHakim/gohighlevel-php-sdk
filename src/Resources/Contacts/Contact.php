@@ -147,7 +147,7 @@ final class Contact implements ContactContract
     /**
      * {@inheritDoc}
      */
-    public function bulk(string $locationId, array $ids, string $businessId): array
+    public function bulk(string $locationId, array $ids, string $businessId): array|string
     {
         return (new Bulk($this->transporter))->addOrRemove($locationId, $ids, $businessId);
     }

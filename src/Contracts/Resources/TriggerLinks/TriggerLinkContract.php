@@ -16,7 +16,7 @@ interface TriggerLinkContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/7fb0921457bdb-update-link
      */

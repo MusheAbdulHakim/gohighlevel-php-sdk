@@ -28,7 +28,7 @@ interface ConversationContract
      *
      * Get the conversation details based on the conversation ID
      *
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d22efcfdb0c80-get-conversation
      */
@@ -49,7 +49,7 @@ interface ConversationContract
      *
      * Delete the conversation details based on the conversation ID
      *
-     * @return array<string, number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/d6b698c33ff49-delete-conversation
      */

@@ -10,7 +10,7 @@ interface OpportunityContract
      * Get Opportunity
      *
      *
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/31798edaafcba-get-opportunity
      */
@@ -20,7 +20,7 @@ interface OpportunityContract
      * Delete Opportunity
      *
      *
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/11568af679dff-delete-opportunity
      */

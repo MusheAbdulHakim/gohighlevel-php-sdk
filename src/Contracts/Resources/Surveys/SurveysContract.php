@@ -10,8 +10,8 @@ interface SurveysContract
      * Get Surveys Submissions
      *
      *
-     * @param  array<string,number>  $params
-     * @return array<string,number>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/288c25c7e319a-get-surveys-submissions
      */
@@ -21,8 +21,8 @@ interface SurveysContract
      * Get Surveys
      *
      *
-     * @param  array<string,number>  $params
-     * @return array<string,number>|string
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/1e9fdbe3f2013-get-surveys
      */

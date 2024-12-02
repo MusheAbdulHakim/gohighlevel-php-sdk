@@ -70,6 +70,9 @@ final class Calendar implements CalendarContract
 
     /**
      * Get all calendars in a location.
+     *
+     * @param  array<mixed>  $params
+     * @return array<mixed>|string
      */
     public function getCalendars(string $locationId, array $params = []): array|string
     {

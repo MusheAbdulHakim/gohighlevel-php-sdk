@@ -14,7 +14,7 @@ interface SaasContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/17e63a64621dc-get-locations-by-stripe-id-with-company-id
      */
@@ -25,7 +25,7 @@ interface SaasContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/3ed6984d6d3d3-update-saa-s-subscription
      */
@@ -36,7 +36,7 @@ interface SaasContract
      *
      *
      * @param  array<string, array<string>>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/ae2bab1a54b4b-disable-saa-s-for-locations
      */
@@ -47,7 +47,7 @@ interface SaasContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/b7ee10fc892a5-enable-saa-s-for-location
      */
@@ -58,7 +58,7 @@ interface SaasContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/7ad2b7afa2a8c-pause-location
      */
@@ -69,7 +69,7 @@ interface SaasContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/cad43318bd5dc-update-rebilling
      */

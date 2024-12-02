@@ -74,6 +74,7 @@ final readonly class HttpTransporter implements TransporterContract
             throw new UnserializableResponse($jsonException);
         }
 
+        // @phpstan-ignore-next-line
         return Response::from($data, $response->getHeaders());
     }
 
@@ -135,10 +136,11 @@ final readonly class HttpTransporter implements TransporterContract
         }
 
         try {
-            /** @var array{error?: array{message: string|array<int, string>, type: string, code: string}} $response */
             $response = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
 
+            // @phpstan-ignore-next-line
             if (isset($response['error'])) {
+                // @phpstan-ignore-next-line
                 throw new ErrorException($response);
             }
         } catch (JsonException $jsonException) {

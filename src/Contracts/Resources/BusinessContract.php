@@ -24,7 +24,7 @@ interface BusinessContract
     /**
      * Delete Business
      *
-     * @return array<string>|string
+     * @return array<mixed>|string
      *
      * @link https://highlevel.stoplight.io/docs/integrations/6f776fbd6dd1f-delete-business
      */

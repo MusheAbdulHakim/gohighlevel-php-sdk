@@ -10,7 +10,7 @@ interface FunnelContract
      * Fetch List of Funnels
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/80d7ad39f1e90-fetch-list-of-funnels
      */
@@ -21,7 +21,7 @@ interface FunnelContract
      *
      *
      * @param  array<string>  $params
-     * @return array<string>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/99a6409949f15-fetch-list-of-funnel-pages
      */
@@ -31,7 +31,7 @@ interface FunnelContract
      * Fetch count of funnel pages
      *
      * @param  array<string>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/6bee319f931fa-fetch-count-of-funnel-pages
      */

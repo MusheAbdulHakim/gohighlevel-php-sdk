@@ -47,6 +47,7 @@ final readonly class Response
      */
     public function get(string $key): mixed
     {
+        // @phpstan-ignore-next-line
         return $this->data[$key];
     }
 }

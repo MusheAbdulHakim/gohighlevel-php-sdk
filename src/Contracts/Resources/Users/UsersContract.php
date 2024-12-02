@@ -10,7 +10,7 @@ interface UsersContract
      * Get User
      *
      *
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/a815845536249-get-user
      */
@@ -21,7 +21,7 @@ interface UsersContract
      *
      *
      * @param  array<string,number>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/52e75431abf04-update-user
      */
@@ -31,7 +31,7 @@ interface UsersContract
      * Delete User
      *
      *
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/c0ec81b013379-delete-user
      */
@@ -41,7 +41,7 @@ interface UsersContract
      * Get User by Location
      *
      *
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/2b1f72be935aa-get-user-by-location
      */
@@ -51,7 +51,7 @@ interface UsersContract
      * Create User
      *
      * @param  array<string,number>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/cf3f982337757-create-user
      */
@@ -62,7 +62,7 @@ interface UsersContract
      *
      *
      * @param  array<string,number>  $params
-     * @return array<string,number>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/6fac93869cd3f-search-users
      */

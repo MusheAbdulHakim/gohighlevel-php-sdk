@@ -10,7 +10,7 @@ interface FollowerContract
      * Add Followers
      *
      * @param  array<string>  $followers
-     * @return array<string>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/a4853ad9d0a48-add-followers
      */
@@ -19,7 +19,7 @@ interface FollowerContract
     /**
      * Delete Followers
      *
-     * @return array<string>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/0412c261ca64b-remove-followers
      */
@@ -28,7 +28,7 @@ interface FollowerContract
     /**
      * Delete Followers
      *
-     * @return array<string>|string
+     * @return array<mixed>|string
      *
      * @see https://highlevel.stoplight.io/docs/integrations/0412c261ca64b-remove-followers
      */

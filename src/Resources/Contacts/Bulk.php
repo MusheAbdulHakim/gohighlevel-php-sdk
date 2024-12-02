@@ -15,7 +15,7 @@ final class Bulk implements BulkContract
     /**
      * {@inheritDoc}
      */
-    public function addOrRemove(string $locationId, array $ids, string $businessId): array
+    public function addOrRemove(string $locationId, array $ids, string $businessId): array|string
     {
         $payload = Payload::create('contacts/bulk/business', [
             'locationId' => $locationId,
