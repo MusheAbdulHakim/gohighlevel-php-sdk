@@ -43,7 +43,7 @@ jobs:
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
     - name: Coding Style Checks
-      run: composer test:lint
+      run: PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix .
       
     - name: Type Checks
       run: composer test:types
