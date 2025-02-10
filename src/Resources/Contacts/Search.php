@@ -17,7 +17,7 @@ final class Search implements SearchContract
      */
     public function query(array $params): array|string
     {
-        $payload = Payload::post('contact/search/', $params);
+        $payload = Payload::post('contacts/search/', $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
