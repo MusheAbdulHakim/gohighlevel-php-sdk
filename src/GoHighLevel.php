@@ -61,7 +61,7 @@ final class GoHighLevel
     }
 
     /**
-     * Creates a new factory instance to configure a custom Open AI Client
+     * Creates a new factory instance to configure a custom Gohighlevel Client
      */
     public static function factory(): Factory
     {
