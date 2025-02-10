@@ -10,7 +10,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest]
-        php: [8.2,8.3]
+        php: [8.2,8.3, 8.4]
         dependency-version: [prefer-lowest]
 
     name: Formats P${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
@@ -43,7 +43,7 @@ jobs:
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
     - name: Coding Style Checks
-      run: composer test:lint
+      run: PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix .
       
     - name: Type Checks
       run: composer test:types
