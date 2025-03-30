@@ -53,7 +53,7 @@ final class Conversation implements ConversationContract
      */
     public function create(array $params): array|string
     {
-        $payload = Payload::create('conversations', $params);
+        $payload = Payload::create('conversations/', $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
