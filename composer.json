@@ -1,7 +1,7 @@
 {
     "name": "musheabdulhakim/gohighlevel-php",
     "description": "php sdk for gohighlevel api",
-    "keywords": ["php", "ghl","gohighlevel","api","skd", "package"],
+    "keywords": ["php", "ghl","gohighlevel","gohighlevel-sdk","api","sdk", "package"],
     "license": "MIT",
     "authors": [
         {
