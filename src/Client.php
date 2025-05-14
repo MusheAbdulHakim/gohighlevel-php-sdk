@@ -13,6 +13,7 @@ use MusheAbdulHakim\GoHighLevel\Contracts\Resources\CompanyContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Contacts\ContactContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Conversations\ConversationContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Courses\CourseContract;
+use MusheAbdulHakim\GoHighLevel\Contracts\Resources\CustomMenus\CustomMenuContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Forms\FormContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Funnels\FunnelContract;
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\Invoices\InvoiceContract;
@@ -36,6 +37,7 @@ use MusheAbdulHakim\GoHighLevel\Resources\Company;
 use MusheAbdulHakim\GoHighLevel\Resources\Contacts\Contact;
 use MusheAbdulHakim\GoHighLevel\Resources\Conversations\Conversation;
 use MusheAbdulHakim\GoHighLevel\Resources\Courses\Course;
+use MusheAbdulHakim\GoHighLevel\Resources\CustomMenus\CustomMenu;
 use MusheAbdulHakim\GoHighLevel\Resources\Forms\Form;
 use MusheAbdulHakim\GoHighLevel\Resources\Funnels\Funnel;
 use MusheAbdulHakim\GoHighLevel\Resources\Invoices\Invoice;
@@ -94,6 +96,11 @@ final readonly class Client implements ClientContract
     public function courses(): CourseContract
     {
         return new Course($this->transporter);
+    }
+
+    public function customMenus(): CustomMenuContract
+    {
+        return new CustomMenu($this->transporter);
     }
 
     public function forms(): FormContract
