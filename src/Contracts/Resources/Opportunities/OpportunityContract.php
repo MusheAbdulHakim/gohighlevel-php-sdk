@@ -56,7 +56,7 @@ interface OpportunityContract
      *
      * @see https://highlevel.stoplight.io/docs/integrations/9df1c12e5da99-upsert-opportunity
      */
-    public function upsert(string $pipelineId, string $locationId, string $contactId, array $params = []): array|string;
+    public function upsert(array $params = []): array;
 
     /**
      * Create Opportunity
