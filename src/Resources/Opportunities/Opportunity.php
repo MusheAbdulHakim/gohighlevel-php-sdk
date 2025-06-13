@@ -57,7 +57,10 @@ class Opportunity implements OpportunityContract
      */
     public function upsert(string $pipelineId, string $locationId, string $contactId, array $params = []): array|string
     {
-        $payload = Payload::put('opportunities/upsert', $params);
+        $params['pipelineId'] = $pipelineId;
+        $params['locationId'] = $locationId;
+        $params['contactId'] = $contactId;
+        $payload = Payload::post('opportunities/upsert', $params);
 
         return $this->transporter->requestObject($payload)->data();
     }
