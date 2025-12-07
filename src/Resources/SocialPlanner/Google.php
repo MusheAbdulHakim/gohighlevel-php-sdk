@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Resources\SocialPlanner;
+namespace MusheAbdulHakim\GoHighLevel\Resources\SocialPlanner;
 
 use MusheAbdulHakim\GoHighLevel\Contracts\Resources\SocialPlanner\Google as GoogleSocialPlanner;
 use MusheAbdulHakim\GoHighLevel\Resources\Concerns\Transportable;
