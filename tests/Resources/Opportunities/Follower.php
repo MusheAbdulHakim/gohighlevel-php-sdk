@@ -14,7 +14,7 @@ it('can add followers', function () {
     $id = 'opp_1';
     $followers = ['user_1'];
     $params = ['followers' => $followers];
-    
+
     $mockApiResponse = ['success' => true];
     $mockResponse = Response::from($mockApiResponse);
 

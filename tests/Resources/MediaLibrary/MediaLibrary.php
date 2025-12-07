@@ -56,7 +56,7 @@ it('can list media', function () {
     $sortBy = 'date';
     $sortOrder = 'desc';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,

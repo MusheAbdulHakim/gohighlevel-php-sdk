@@ -36,7 +36,7 @@ it('can start google oauth', function () {
 it('can get business locations', function () {
     $accountId = 'acc_1';
     $locationId = 'loc_1';
-    
+
     $mockApiResponse = ['locations' => []];
     $mockResponse = Response::from($mockApiResponse);
 
@@ -58,7 +58,7 @@ it('can set business location', function () {
     $accountId = 'acc_1';
     $locationId = 'loc_1';
     $params = ['some' => 'param'];
-    
+
     $mockApiResponse = ['success' => true];
     $mockResponse = Response::from($mockApiResponse);
 

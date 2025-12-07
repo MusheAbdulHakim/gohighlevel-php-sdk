@@ -133,7 +133,7 @@ it('can create appointment', function () {
     $contactId = 'cont_1';
     $startTime = '123';
     $params = ['title' => 'New Appt'];
-    
+
     $expectedParams = array_merge($params, [
         'calendarId' => $calendarId,
         'locationId' => $locationId,
@@ -163,7 +163,7 @@ it('can create blocked slot', function () {
     $startTime = '123';
     $endTime = '456';
     $params = ['title' => 'Blocked'];
-    
+
     $expectedParams = array_merge($params, [
         'locationId' => $locationId,
         'startTime' => $startTime,

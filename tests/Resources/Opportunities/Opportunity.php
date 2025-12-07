@@ -95,7 +95,7 @@ it('can upsert an opportunity', function () {
     $locationId = 'loc_1';
     $contactId = 'cont_1';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'pipelineId' => $pipelineId,
         'locationId' => $locationId,

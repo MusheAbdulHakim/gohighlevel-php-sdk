@@ -14,7 +14,7 @@ it('can list transactions', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,
@@ -42,7 +42,7 @@ it('can get a transaction', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,

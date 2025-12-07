@@ -14,7 +14,7 @@ it('can import courses', function () {
     $locationId = 'loc_1';
     $userId = 'user_1';
     $products = ['prod_1'];
-    
+
     $params = [
         'locationId' => $locationId,
         'userId' => $userId,

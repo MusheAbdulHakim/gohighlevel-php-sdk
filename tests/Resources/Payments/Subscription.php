@@ -14,7 +14,7 @@ it('can list subscriptions', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,
@@ -42,7 +42,7 @@ it('can get a subscription', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'subscriptionId' => $subscriptionId,
         'altId' => $altId,

@@ -33,7 +33,7 @@ it('can list integrations', function () {
     $altId = 'loc_1';
     $altType = 'location'; // Optional args
     $params = ['some' => 'param'];
-    
+
     $mockApiResponse = ['integrations' => []];
     $mockResponse = Response::from($mockApiResponse);
 

@@ -35,7 +35,7 @@ it('can list templates', function () {
     $limit = '10';
     $offset = '0';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,

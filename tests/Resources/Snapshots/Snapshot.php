@@ -79,7 +79,7 @@ it('can get snapshot status for location', function () {
     $snapshotId = 'snap_1';
     $locationId = 'loc_1';
     $params = ['some' => 'param'];
-    
+
     $mockApiResponse = ['status' => []];
     $mockResponse = Response::from($mockApiResponse);
 

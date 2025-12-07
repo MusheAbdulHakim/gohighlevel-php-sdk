@@ -39,7 +39,7 @@ it('can list funnel pages', function () {
     $limit = 10;
     $offset = 0;
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'funnelId' => $funnelId,
         'locationId' => $locationId,
@@ -68,7 +68,7 @@ it('can count funnel pages', function () {
     $funnelId = 'fun_1';
     $locationId = 'loc_1';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'funnelId' => $funnelId,
         'locationId' => $locationId,

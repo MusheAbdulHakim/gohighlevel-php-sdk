@@ -192,7 +192,7 @@ it('can list invoices', function () {
     $limit = '10';
     $offset = '0';
     $params = ['status' => 'all'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,

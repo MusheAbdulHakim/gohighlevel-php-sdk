@@ -14,7 +14,7 @@ it('can add or remove bulk contacts', function () {
     $locationId = 'location_123';
     $ids = ['contact_1', 'contact_2'];
     $businessId = 'business_123';
-    
+
     $params = [
         'locationId' => $locationId,
         'ids' => $ids,

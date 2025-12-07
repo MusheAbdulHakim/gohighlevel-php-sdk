@@ -54,7 +54,7 @@ it('can delete a template', function () {
     // In `Template.php`, it is `Payload::delete('locations/{locationId}/templates/', $id)`.
     // This string literal `locations/{locationId}/templates/` contains a placeholder that isn't replaced.
     // I will write expectation to match exactly what is passed.
-    
+
     $expectedPayload = Payload::delete('locations/{locationId}/templates/', $id);
 
     $this->transporter

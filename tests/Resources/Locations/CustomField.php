@@ -34,7 +34,7 @@ it('can create a custom field', function () {
     $name = 'Field Name';
     $dataType = 'TEXT';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, ['name' => $name, 'dataType' => $dataType]);
     $mockApiResponse = ['customField' => []];
     $mockResponse = Response::from($mockApiResponse);

@@ -52,7 +52,7 @@ it('can update a redirect', function () {
 it('can list redirects', function () {
     $locationId = 'loc_1';
     $params = ['limit' => 10];
-    
+
     $mockApiResponse = ['redirects' => []];
     $mockResponse = Response::from($mockApiResponse);
 

@@ -52,7 +52,7 @@ it('can validate slug', function () {
     $locationId = 'loc_1';
     $slug = 'slug_1';
     $available = true;
-    
+
     $expectedParams = [
         'locationId' => $locationId,
         'slug' => $slug,

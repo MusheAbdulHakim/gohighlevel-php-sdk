@@ -35,7 +35,7 @@ it('can get submissions', function () {
 it('can upload to custom fields', function () {
     $locationId = 'loc_1';
     $contactId = 'cont_1';
-    
+
     $mockApiResponse = ['success' => true];
     $mockResponse = Response::from($mockApiResponse);
 
@@ -58,7 +58,7 @@ it('can upload to custom fields', function () {
 it('can list forms', function () {
     $locationId = 'loc_1';
     $params = ['limit' => 10];
-    
+
     $mockApiResponse = ['forms' => []];
     $mockResponse = Response::from($mockApiResponse);
 

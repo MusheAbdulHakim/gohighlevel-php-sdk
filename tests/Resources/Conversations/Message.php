@@ -112,7 +112,7 @@ it('can create outbound message', function () {
     // This seems like a COPY PASTE ERROR in source code. It points to 'inbound'.
     // `outbound` method name, but `inbound` URI.
     // I must test what is there.
-    
+
     $type = 'SMS';
     $conversationId = 'conv_1';
     $conversationProviderId = 'prov_1';
@@ -163,7 +163,7 @@ it('can upload attachment', function () {
     $conversationId = 'conv_1';
     $locationId = 'loc_1';
     $attachmentUrls = ['http://example.com/file.jpg'];
-    
+
     $expectedParams = [
         'multipart' => [
             [

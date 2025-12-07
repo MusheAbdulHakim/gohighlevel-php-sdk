@@ -35,7 +35,7 @@ it('can list schedules', function () {
     $limit = '10';
     $offset = '0';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,
@@ -91,7 +91,7 @@ it('can update a schedule', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['date' => '2023-01-02'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,
@@ -140,7 +140,7 @@ it('can schedule invoice', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,
@@ -168,7 +168,7 @@ it('can schedule auto payment', function () {
     $altId = 'loc_1';
     $altType = 'location';
     $params = ['some' => 'param'];
-    
+
     $expectedParams = array_merge($params, [
         'altId' => $altId,
         'altType' => $altType,

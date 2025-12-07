@@ -46,7 +46,7 @@ it('can get oauth token', function () {
 it('can get access from agency', function () {
     $companyId = 'company_id';
     $locationId = 'location_id';
-    
+
     $params = [
         'companyId' => $companyId,
         'locationId' => $locationId,
@@ -74,7 +74,7 @@ it('can get access from agency', function () {
 it('can get app location', function () {
     $appId = 'app_id';
     $companyId = 'company_id';
-    
+
     $params = [
         'appId' => $appId,
         'companyId' => $companyId,
@@ -102,7 +102,7 @@ it('can get app location', function () {
 it('can get location', function () {
     $appId = 'app_id';
     $companyId = 'company_id';
-    
+
     $params = [
         'appId' => $appId,
         'companyId' => $companyId,
