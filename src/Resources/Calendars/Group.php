@@ -39,6 +39,7 @@ final class Group implements GroupContract
      */
     public function validate(string $locationId, string $slug, bool $available): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $params['slug'] = $slug;
         $params['available'] = $available;
@@ -72,6 +73,7 @@ final class Group implements GroupContract
      */
     public function disable(string $groupId, bool $isActive): array|string
     {
+        $params = [];
         $params['isActive'] = $isActive;
         $payload = Payload::put("calendars/groups/{$groupId}/status", $params);
 

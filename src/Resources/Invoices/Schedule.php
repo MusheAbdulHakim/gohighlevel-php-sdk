@@ -42,6 +42,7 @@ final class Schedule implements ScheduleContract
      */
     public function get(string $scheduleId, string $altId, string $altType): array|string
     {
+        $params = [];
         $params['altId'] = $altId;
         $params['altType'] = $altType;
         $payload = Payload::get("invoices/schedule/{$scheduleId}", $params);
@@ -100,6 +101,7 @@ final class Schedule implements ScheduleContract
      */
     public function cancel(string $scheduleId, string $altId, string $altType): array|string
     {
+        $params = [];
         $params['altId'] = $altId;
         $params['altType'] = $altType;
         $payload = Payload::post("invoices/schedule/{$scheduleId}/cancel", $params);

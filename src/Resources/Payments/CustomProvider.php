@@ -35,6 +35,7 @@ class CustomProvider implements CustomProviderContract
      */
     public function getConfig(string $locationId): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $payload = Payload::get('payments/custom-provider/connect', $params);
 
@@ -56,6 +57,7 @@ class CustomProvider implements CustomProviderContract
      */
     public function deleteConfig(string $locationId, bool $liveMode): array|string
     {
+        $params = [];
         $params['liveMode'] = $liveMode;
         $payload = Payload::post("payments/custom-provider/disconnect?locationId={$locationId}", $params);
 
@@ -67,6 +69,7 @@ class CustomProvider implements CustomProviderContract
      */
     public function disconnectConfig(string $locationId, bool $liveMode): array|string
     {
+        $params = [];
         $params['liveMode'] = $liveMode;
         $payload = Payload::post("payments/custom-provider/disconnect?locationId={$locationId}", $params);
 

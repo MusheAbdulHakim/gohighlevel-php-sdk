@@ -47,6 +47,7 @@ class User implements UsersContract
      */
     public function byLocation(string $locationId): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $payload = Payload::get('users/', $params);
 

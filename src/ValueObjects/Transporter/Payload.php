@@ -19,8 +19,7 @@ final readonly class Payload
 {
     /**
      * Creates a new Request value object.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     private function __construct(
         private ContentType $contentType,
@@ -33,8 +32,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function list(string $resource, array $parameters = []): self
     {
@@ -47,8 +45,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function retrieve(string $resource, string $id, string $suffix = '', array $parameters = []): self
     {
@@ -61,8 +58,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function modify(string $resource, string $id, array $parameters = []): self
     {
@@ -75,8 +71,7 @@ final readonly class Payload
 
     /**
      * Create new payload that sends a post request
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function post(string $resource, array $parameters = []): self
     {
@@ -89,8 +84,7 @@ final readonly class Payload
 
     /**
      * Create new custom payload that sends whatever request you choose
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function custom(Method $method, ContentType $contentType, string $resource, array $parameters = []): self
     {
@@ -101,8 +95,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function put(string $resource, array $parameters = []): self
     {
@@ -115,8 +108,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function patch(string $resource, array $parameters = []): self
     {
@@ -141,8 +133,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function create(string $resource, array $parameters): self
     {
@@ -155,8 +146,7 @@ final readonly class Payload
 
     /**
      * Creates a new Payload value object from the given parameters.
-     *
-     * @param  array<string, mixed>  $parameters
+     * @param  array<mixed>  $parameters
      */
     public static function upload(string $resource, array $parameters): self
     {
@@ -193,8 +183,7 @@ final readonly class Payload
 
     /**
      * Create a new payload value object from the given parameters using a get method.
-     *
-     * @param  array<string, mixed>  $params
+     * @param  array<mixed>  $params
      */
     public static function get(string $resource, array $params = []): self
     {

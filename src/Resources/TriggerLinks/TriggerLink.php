@@ -37,6 +37,7 @@ final class TriggerLink implements TriggerLinkContract
      */
     public function get(string $locationId): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $payload = Payload::get('links/', $params);
 

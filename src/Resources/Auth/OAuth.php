@@ -32,6 +32,7 @@ final class OAuth implements OAuthContract
      */
     public function AcessFromAgency(string $companyId, string $locationId): array|string
     {
+        $params = [];
         $params['companyId'] = $companyId;
         $params['locationId'] = $locationId;
         $payload = Payload::post('oauth/locationToken', $params);
