@@ -218,7 +218,7 @@ final readonly class Payload
 
         $headers = $headers->withContentType($this->contentType);
 
-        if ($this->method === Method::POST) {
+        if ($this->method === Method::POST || $this->method === Method::PUT) {
             if ($this->contentType === ContentType::MULTIPART) {
                 $streamBuilder = new MultipartStreamBuilder($psr17Factory);
 
