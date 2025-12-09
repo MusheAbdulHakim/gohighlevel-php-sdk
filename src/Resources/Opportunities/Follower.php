@@ -17,6 +17,7 @@ class Follower implements FollowerContract
      */
     public function add(string $id, array $followers): array|string
     {
+        $params = [];
         $params['followers'] = $followers;
         $payload = Payload::post("opportunities/{$id}/followers", $params);
 

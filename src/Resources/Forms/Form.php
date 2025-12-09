@@ -28,6 +28,7 @@ final class Form implements FormContract
      */
     public function uploadToCustomFields(string $locationId, string $contactId): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $params['contactId'] = $contactId;
         $payload = Payload::post("forms/upload-custom-files?contactId=$contactId&locationId=$locationId");

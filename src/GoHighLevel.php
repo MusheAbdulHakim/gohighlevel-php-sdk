@@ -33,6 +33,7 @@ final class GoHighLevel
             ],
         ]);
 
+        /** @var \Psr\Http\Message\ResponseInterface $response */
         return json_decode((string) $response->getBody()->getContents(), true);
     }
 

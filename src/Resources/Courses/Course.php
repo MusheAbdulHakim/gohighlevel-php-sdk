@@ -17,6 +17,7 @@ final class Course implements CourseContract
      */
     public function import(string $locationId, string $userId, array $products): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $params['userId'] = $userId;
         $params['products'] = $products;

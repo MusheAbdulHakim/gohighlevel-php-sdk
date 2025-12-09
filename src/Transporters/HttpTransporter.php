@@ -111,6 +111,7 @@ final readonly class HttpTransporter implements TransporterContract
     private function sendRequest(Closure $callable): ResponseInterface
     {
         try {
+            /** @var ResponseInterface */
             return $callable();
         } catch (ClientExceptionInterface $clientException) {
             if ($clientException instanceof ClientException) {

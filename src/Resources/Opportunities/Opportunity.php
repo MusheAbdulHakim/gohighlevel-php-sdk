@@ -46,6 +46,7 @@ class Opportunity implements OpportunityContract
      */
     public function updateStatus(string $id, string $status): array|string
     {
+        $params = [];
         $params['status'] = $status;
         $payload = Payload::put("opportunities/{$id}/status", $params);
 
@@ -91,6 +92,7 @@ class Opportunity implements OpportunityContract
      */
     public function pipelines(string $locationId): array|string
     {
+        $params = [];
         $params['locationId'] = $locationId;
         $payload = Payload::get('opportunities/pipelines', $params);
 

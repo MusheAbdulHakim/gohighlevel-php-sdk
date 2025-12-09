@@ -1,7 +1,15 @@
 {
     "name": "musheabdulhakim/gohighlevel-php",
     "description": "php sdk for gohighlevel api",
-    "keywords": ["php", "ghl","gohighlevel","gohighlevel-sdk","api","sdk", "package"],
+    "keywords": [
+        "php",
+        "ghl",
+        "gohighlevel",
+        "gohighlevel-sdk",
+        "api",
+        "sdk",
+        "package"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -23,11 +31,11 @@
         "guzzlehttp/guzzle": "^7.9",
         "guzzlehttp/psr7": "^2.7",
         "mockery/mockery": "^1.6",
-        "pestphp/pest": "^3.6",
-        "pestphp/pest-plugin-type-coverage": "^3.2",
-        "phpstan/phpstan": "^1.12",
-        "rector/rector": "^1.2",
-        "symfony/var-dumper": "^6.4.0|^7.2.0"
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-type-coverage": "^3.6",
+        "phpstan/phpstan": "^2.1",
+        "rector/rector": "^2.1",
+        "symfony/var-dumper": "^7.3"
     },
     "autoload": {
         "psr-4": {

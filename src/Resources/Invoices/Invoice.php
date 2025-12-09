@@ -20,6 +20,7 @@ final class Invoice implements InvoiceContract
      */
     public function generateNumber(string $altId, string $altType): array|string
     {
+        $params = [];
         $params['altId'] = $altId;
         $params['altType'] = $altType;
         $payload = Payload::get('invoices/generate-invoice-number', $params);
@@ -62,6 +63,7 @@ final class Invoice implements InvoiceContract
      */
     public function void(string $invoiceId, string $altId, string $altType): array|string
     {
+        $params = [];
         $params['altId'] = $altId;
         $params['altType'] = $altType;
         $payload = Payload::post("invoices/{$invoiceId}/void/", $params);
