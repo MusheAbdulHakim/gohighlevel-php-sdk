@@ -195,6 +195,14 @@ final readonly class Payload
     }
 
     /**
+     * Determines whether the HTTP method is expected to carry a request body.
+     */
+    private function methodHasRequestBody(): bool
+    {
+        return in_array($this->method, [Method::POST, Method::PUT, Method::PATCH], true);
+    }
+
+    /**
      * Creates a new Psr 7 Request instance.
      *
      * @throws \JsonException
@@ -218,7 +226,7 @@ final readonly class Payload
 
         $headers = $headers->withContentType($this->contentType);
 
-        if ($this->method === Method::POST) {
+        if ($this->methodHasRequestBody()) {
             if ($this->contentType === ContentType::MULTIPART) {
                 $streamBuilder = new MultipartStreamBuilder($psr17Factory);
 
